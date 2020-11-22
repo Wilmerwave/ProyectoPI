@@ -5,6 +5,7 @@
  */
 package main;
 
+//import modelo.Cliente;
 import vista.MenuGUI;
 
 /**
@@ -20,7 +21,9 @@ public class EjemploPi {
         
         MenuGUI ventana = new MenuGUI();
         ventana.setVisible(true);
-        // TODO code application logic here
+        
+        //Cliente cliente = new Cliente("123","camila",5,5,"678");
+        //System.out.println(cliente.getUbicacion());
     }
     
 }

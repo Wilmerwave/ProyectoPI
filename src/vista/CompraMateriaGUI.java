@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejemplopi;
+package vista;
 
 /**
  *
  * @author Lenovo
  */
-public class CompraMP extends javax.swing.JFrame {
+public class CompraMateriaGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form CompraMP
      */
-    public CompraMP() {
+    public CompraMateriaGUI() {
         initComponents();
     }
 
@@ -134,7 +134,7 @@ public class CompraMP extends javax.swing.JFrame {
 
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
         setVisible(false);
-        Empresa menu = new Empresa();
+        EmpresaGUI menu = new EmpresaGUI();
         menu.setVisible(true);
     }//GEN-LAST:event_volverActionPerformed
 
@@ -155,20 +155,21 @@ public class CompraMP extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CompraMP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CompraMateriaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CompraMP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CompraMateriaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CompraMP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CompraMateriaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CompraMP.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CompraMateriaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CompraMP().setVisible(true);
+                new CompraMateriaGUI().setVisible(true);
             }
         });
     }

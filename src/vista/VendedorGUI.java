@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejemplopi;
+package vista;
 
 /**
  *
  * @author PuntoPC
  */
-public class Vendedor extends javax.swing.JFrame {
+public class VendedorGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form Vendedor
      */
-    public Vendedor() {
+    public VendedorGUI() {
         initComponents();
     }
 
@@ -112,25 +112,25 @@ public class Vendedor extends javax.swing.JFrame {
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
 
         setVisible(false);
-        Principal ventana = new Principal();
+        MenuGUI ventana = new MenuGUI();
         ventana.setVisible(true);
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
          setVisible(false);
-        InventarioPT inv = new InventarioPT();
+        InventarioProductosGUI inv = new InventarioProductosGUI();
         inv.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         setVisible(false);
-        ventas venta = new ventas();
+        VentaGUI venta = new VentaGUI();
         venta.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         setVisible(false);
-        Factura factura = new Factura();
+        FacturaVentaGUI factura = new FacturaVentaGUI();
         factura.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -151,20 +151,21 @@ public class Vendedor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Vendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendedorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Vendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendedorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Vendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendedorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Vendedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VendedorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Vendedor().setVisible(true);
+                new VendedorGUI().setVisible(true);
             }
         });
     }

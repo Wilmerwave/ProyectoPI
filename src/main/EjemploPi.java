@@ -5,7 +5,7 @@
  */
 package main;
 
-import ejemplopi.Principal;
+import vista.MenuGUI;
 
 /**
  *
@@ -18,7 +18,7 @@ public class EjemploPi {
      */
     public static void main(String[] args) {
         
-        Principal ventana = new Principal();
+        MenuGUI ventana = new MenuGUI();
         ventana.setVisible(true);
         // TODO code application logic here
     }

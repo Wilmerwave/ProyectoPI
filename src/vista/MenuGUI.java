@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejemplopi;
+package vista;
 
 /**
  *
  * @author PuntoPC
  */
-public class Principal extends javax.swing.JFrame {
+public class MenuGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form Principal
      */
-    public Principal() {
+    public MenuGUI() {
         initComponents();
     }
 
@@ -112,7 +112,7 @@ public class Principal extends javax.swing.JFrame {
     private void btnEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpresaActionPerformed
 
         setVisible(false);
-        Empresa empresa = new Empresa();
+        EmpresaGUI empresa = new EmpresaGUI();
         empresa.setVisible(true);
            
     }//GEN-LAST:event_btnEmpresaActionPerformed
@@ -120,21 +120,21 @@ public class Principal extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         
         setVisible(false);
-        Vendedor vendedor = new Vendedor();
+        VendedorGUI vendedor = new VendedorGUI();
         vendedor.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void btnFabricaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFabricaActionPerformed
 
         setVisible(false);
-        Fabrica fabrica = new Fabrica();
+        FabricaGUI fabrica = new FabricaGUI();
         fabrica.setVisible(true);
     }//GEN-LAST:event_btnFabricaActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         
         setVisible(false);
-        Chat chat = new Chat();
+        ChatGUI chat = new ChatGUI();
         chat.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -155,20 +155,23 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Principal().setVisible(true);
+                new MenuGUI().setVisible(true);
             }
         });
     }

@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejemplopi;
+package vista;
 
 /**
  *
  * @author PuntoPC
  */
-public class Fabrica extends javax.swing.JFrame {
+public class ChatGUI extends javax.swing.JFrame {
 
     /**
-     * Creates new form Fabrica
+     * Creates new form Chat
      */
-    public Fabrica() {
+    public ChatGUI() {
         initComponents();
     }
 
@@ -28,31 +28,12 @@ public class Fabrica extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        iniciarProduccion = new javax.swing.JButton();
-        inventarioMP = new javax.swing.JButton();
-        inventarioPT = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("Menú Fabrica");
-
-        iniciarProduccion.setText("Iniciar Producción");
-
-        inventarioMP.setText("Inventario Materia Prima");
-        inventarioMP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inventarioMPActionPerformed(evt);
-            }
-        });
-
-        inventarioPT.setText("Inventario Productos");
-        inventarioPT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inventarioPTActionPerformed(evt);
-            }
-        });
+        jLabel1.setText("Servicio al Cliente (Chat)");
 
         btnVolver.setText("Menú Principal");
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -66,33 +47,20 @@ public class Fabrica extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(208, 208, 208)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(inventarioMP)
-                    .addComponent(inventarioPT)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(iniciarProduccion)
-                            .addComponent(jLabel1))))
-                .addContainerGap(233, Short.MAX_VALUE))
+                .addGap(140, 140, 140)
+                .addComponent(jLabel1)
+                .addContainerGap(168, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnVolver)
-                .addGap(31, 31, 31))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(49, 49, 49)
                 .addComponent(jLabel1)
-                .addGap(61, 61, 61)
-                .addComponent(iniciarProduccion)
-                .addGap(60, 60, 60)
-                .addComponent(inventarioMP)
-                .addGap(45, 45, 45)
-                .addComponent(inventarioPT)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
                 .addComponent(btnVolver)
                 .addContainerGap())
         );
@@ -103,21 +71,9 @@ public class Fabrica extends javax.swing.JFrame {
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
 
         setVisible(false);
-        Principal ventana = new Principal();
+        MenuGUI ventana = new MenuGUI();
         ventana.setVisible(true);
     }//GEN-LAST:event_btnVolverActionPerformed
-
-    private void inventarioMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventarioMPActionPerformed
-        setVisible(false);
-        InventarioMP inv = new InventarioMP();
-        inv.setVisible(true);
-    }//GEN-LAST:event_inventarioMPActionPerformed
-
-    private void inventarioPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventarioPTActionPerformed
-        setVisible(false);
-        InventarioPT inv = new InventarioPT();
-        inv.setVisible(true);
-    }//GEN-LAST:event_inventarioPTActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,29 +92,27 @@ public class Fabrica extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Fabrica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChatGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Fabrica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChatGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Fabrica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChatGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Fabrica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ChatGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Fabrica().setVisible(true);
+                new ChatGUI().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVolver;
-    private javax.swing.JButton iniciarProduccion;
-    private javax.swing.JButton inventarioMP;
-    private javax.swing.JButton inventarioPT;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejemplopi;
+package vista;
 
 /**
  *
  * @author PuntoPC
  */
-public class Empresa extends javax.swing.JFrame {
+public class EmpresaGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form Principal2
      */
-    public Empresa() {
+    public EmpresaGUI() {
         initComponents();
     }
 
@@ -147,44 +147,44 @@ public class Empresa extends javax.swing.JFrame {
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
 
         setVisible(false);
-        Principal ventana = new Principal();
+        MenuGUI ventana = new MenuGUI();
         ventana.setVisible(true);
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         setVisible(false);
-        Pago pagos = new Pago();
+        PagoGUI pagos = new PagoGUI();
         pagos.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void compraMateriaPrimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compraMateriaPrimaActionPerformed
         setVisible(false);
-        CompraMP compra = new CompraMP();
+        CompraMateriaGUI compra = new CompraMateriaGUI();
         compra.setVisible(true);
     }//GEN-LAST:event_compraMateriaPrimaActionPerformed
 
     private void facturasComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facturasComprasActionPerformed
         setVisible(false);
-        Factura2 factura = new Factura2();
+        FacturaCompraGUI factura = new FacturaCompraGUI();
         factura.setVisible(true);
     }//GEN-LAST:event_facturasComprasActionPerformed
 
     private void facturasVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facturasVentaActionPerformed
        setVisible(false);
-       Factura factura = new Factura();
+       FacturaVentaGUI factura = new FacturaVentaGUI();
        factura.setVisible(true);
     }//GEN-LAST:event_facturasVentaActionPerformed
 
     private void inventarioMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventarioMPActionPerformed
         setVisible(false);
-        InventarioMP inv = new InventarioMP();
+        InventarioMateriaGUI inv = new InventarioMateriaGUI();
         inv.setVisible(true);
     }//GEN-LAST:event_inventarioMPActionPerformed
 
     private void inventarioPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventarioPTActionPerformed
        setVisible(false);
-       InventarioPT inv = new InventarioPT();
+       InventarioProductosGUI inv = new InventarioProductosGUI();
        inv.setVisible(true);
     }//GEN-LAST:event_inventarioPTActionPerformed
 
@@ -205,21 +205,23 @@ public class Empresa extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Empresa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmpresaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Empresa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmpresaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Empresa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmpresaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Empresa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EmpresaGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Empresa().setVisible(true);
+                new EmpresaGUI().setVisible(true);
             }
         });
     }

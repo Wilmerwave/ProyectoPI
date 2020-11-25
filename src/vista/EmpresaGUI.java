@@ -32,10 +32,10 @@ public class EmpresaGUI extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         inventarioMP = new javax.swing.JButton();
         inventarioPT = new javax.swing.JButton();
-        btnVolver = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         facturasCompras = new javax.swing.JButton();
         facturasVenta = new javax.swing.JButton();
+        btnVolver1 = new javax.swing.JButton();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -69,13 +69,6 @@ public class EmpresaGUI extends javax.swing.JFrame {
             }
         });
 
-        btnVolver.setText("Menú Principal");
-        btnVolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverActionPerformed(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Menú Empresa");
 
@@ -93,19 +86,24 @@ public class EmpresaGUI extends javax.swing.JFrame {
             }
         });
 
+        btnVolver1.setBackground(new java.awt.Color(0, 102, 255));
+        btnVolver1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnVolver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/volver.PNG"))); // NOI18N
+        btnVolver1.setText("Volver Menú Principal");
+        btnVolver1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolver1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnVolver)
-                        .addGap(34, 34, 34))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(253, 253, 253))))
+                .addComponent(jLabel1)
+                .addGap(253, 253, 253))
             .addGroup(layout.createSequentialGroup()
                 .addGap(141, 141, 141)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,6 +116,9 @@ public class EmpresaGUI extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(inventarioPT))
                 .addContainerGap(125, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnVolver1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,20 +137,12 @@ public class EmpresaGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inventarioMP)
                     .addComponent(inventarioPT))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                .addComponent(btnVolver)
-                .addGap(24, 24, 24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                .addComponent(btnVolver1))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-
-        setVisible(false);
-        MenuGUI ventana = new MenuGUI();
-        ventana.setVisible(true);
-    }//GEN-LAST:event_btnVolverActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
@@ -187,6 +180,12 @@ public class EmpresaGUI extends javax.swing.JFrame {
        InventarioProductosGUI inv = new InventarioProductosGUI();
        inv.setVisible(true);
     }//GEN-LAST:event_inventarioPTActionPerformed
+
+    private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
+        setVisible(false);
+        MenuGUI principal =new MenuGUI();
+        principal.setVisible(true);
+    }//GEN-LAST:event_btnVolver1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,7 +226,7 @@ public class EmpresaGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnVolver;
+    private javax.swing.JButton btnVolver1;
     private javax.swing.JButton compraMateriaPrima;
     private javax.swing.JButton facturasCompras;
     private javax.swing.JButton facturasVenta;

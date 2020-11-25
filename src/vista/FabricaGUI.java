@@ -31,7 +31,7 @@ public class FabricaGUI extends javax.swing.JFrame {
         iniciarProduccion = new javax.swing.JButton();
         inventarioMP = new javax.swing.JButton();
         inventarioPT = new javax.swing.JButton();
-        btnVolver = new javax.swing.JButton();
+        btnVolver1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,10 +54,13 @@ public class FabricaGUI extends javax.swing.JFrame {
             }
         });
 
-        btnVolver.setText("Menú Principal");
-        btnVolver.addActionListener(new java.awt.event.ActionListener() {
+        btnVolver1.setBackground(new java.awt.Color(0, 102, 255));
+        btnVolver1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnVolver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/volver.PNG"))); // NOI18N
+        btnVolver1.setText("Volver Menú Principal");
+        btnVolver1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverActionPerformed(evt);
+                btnVolver1ActionPerformed(evt);
             }
         });
 
@@ -77,9 +80,8 @@ public class FabricaGUI extends javax.swing.JFrame {
                             .addComponent(jLabel1))))
                 .addContainerGap(233, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnVolver)
-                .addGap(31, 31, 31))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnVolver1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,20 +94,12 @@ public class FabricaGUI extends javax.swing.JFrame {
                 .addComponent(inventarioMP)
                 .addGap(45, 45, 45)
                 .addComponent(inventarioPT)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
-                .addComponent(btnVolver)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addComponent(btnVolver1))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-
-        setVisible(false);
-        MenuGUI ventana = new MenuGUI();
-        ventana.setVisible(true);
-    }//GEN-LAST:event_btnVolverActionPerformed
 
     private void inventarioMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventarioMPActionPerformed
         setVisible(false);
@@ -118,6 +112,12 @@ public class FabricaGUI extends javax.swing.JFrame {
         InventarioProductosGUI inv = new InventarioProductosGUI();
         inv.setVisible(true);
     }//GEN-LAST:event_inventarioPTActionPerformed
+
+    private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
+        setVisible(false);
+        MenuGUI principal =new MenuGUI();
+        principal.setVisible(true);
+    }//GEN-LAST:event_btnVolver1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,7 +156,7 @@ public class FabricaGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnVolver;
+    private javax.swing.JButton btnVolver1;
     private javax.swing.JButton iniciarProduccion;
     private javax.swing.JButton inventarioMP;
     private javax.swing.JButton inventarioPT;

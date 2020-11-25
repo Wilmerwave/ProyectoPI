@@ -5,11 +5,7 @@
  */
 package modelo;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.LocalTime;
-import java.time.Month;
-import java.time.format.DateTimeFormatter;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import javax.swing.JOptionPane;

@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class items_MateriaPrimaComprada {
 
-/*
+
     //Atributos
     private ArrayList<MateriaPrima> items;
     
@@ -35,5 +35,5 @@ public class items_MateriaPrimaComprada {
     public void setItems(ArrayList<MateriaPrima> items) {
         this.items = items;
     }
-    */
+    
 }

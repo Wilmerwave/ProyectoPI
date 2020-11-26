@@ -8,6 +8,8 @@ package modelo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.JOptionPane;
 
 
@@ -22,19 +24,29 @@ public class FacturadeCompra {
     private String id;
     private static LocalDate fecha; // ejemplo; el 24 de Noviembre de 2020 => "2020-11-24".
     private double valorFactura;
-    //private items_MateriaPrimaComprada infoMP;
+    private  ArrayList<items_MateriaPrimaComprada> infoMP;
     
     
-    //CONSTRUCTOR
+    //CONSTRUCTORES
 
-    public FacturadeCompra(String id, double valorFactura) {
+    public FacturadeCompra(String id, double valorFactura, ArrayList<items_MateriaPrimaComprada> infoMP) {
         this.id = id;
         this.valorFactura = valorFactura;
+        this.infoMP = infoMP;
     }
+
+    public FacturadeCompra(String id) {
+        valorFactura = 0.0;
+        infoMP = new ArrayList<>();
+    }
+    
     public FacturadeCompra() {
         id = " ";
         valorFactura = 0.0;
+        infoMP = new ArrayList<>();
     }
+    
+    
     
     
     
@@ -57,7 +69,11 @@ public class FacturadeCompra {
         this.valorFactura = valorFactura;
     }
     
-    public LocalDate setFechaFacturadeCompra(String fcompra){// convierte un String -> LocalDate
+    public static LocalDate getFecha() {
+        return fecha;
+    }
+    
+    public LocalDate getLocalDat_String(String fcompra){// convierte un String -> LocalDate
         
         try {
         
@@ -70,7 +86,7 @@ public class FacturadeCompra {
             
             JOptionPane.showMessageDialog(null, " el formato debe ser => 2020-11-24  " + e);
             
-           // setFechaFacturadeCompra(" 1111-11-11");
+           // getLocalDat_String(" 1111-11-11");
             
         
         }finally{
@@ -82,14 +98,11 @@ public class FacturadeCompra {
             return now;
         }
         
+        
+        
     }
         
-        
-    
-    
-    
-    
-    public String getFechadeHoy( LocalDate fecha){ // devuelve un String del dato LocalDate
+    public String getString_LoDate( LocalDate fecha){ // devuelve un String del dato LocalDate
         
         String fechaFC = " ";// ejemplo; el 24 de Noviembre de 2020 => "2020-11-24".
         
@@ -102,10 +115,22 @@ public class FacturadeCompra {
         
     }
 
-    public static LocalDate getFecha() {
-        return fecha;
-    }
     
+    public Double valorFactura ( ArrayList<items_MateriaPrimaComprada> compra){
+        
+        double totalvalor = 0.0;
+        
+        Iterator iterador = compra.iterator();
+        
+        while(iterador.hasNext()){
+            
+            items_MateriaPrimaComprada parte = (items_MateriaPrimaComprada) iterador.next();
+            
+            parte.
+        }
+        
+        
+    }
         
     
     

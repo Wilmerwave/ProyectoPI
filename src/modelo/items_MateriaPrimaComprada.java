@@ -7,6 +7,8 @@ package modelo;
 
 import java.util.ArrayList;
 
+
+
 /**
  *
  * @author Lenovo
@@ -36,4 +38,25 @@ public class items_MateriaPrimaComprada {
         this.items = items;
     }
     
+    // Metodo para adicionar un insumo comprado a una lista
+    
+    public void adicionarInsumo( MateriaPrima insumo){
+        
+        items.add(insumo);
+    }
+    
+    // Metodo para calcular el valor de una lista de materia prima
+    
+    public Double valorlistaitems( ArrayList<MateriaPrima> compra){
+        
+        double cuenta = 0.0;
+        
+        FacturadeCompra pahoy = new FacturadeCompra();
+        
+        cuenta = cuenta + pahoy.valorFactura(compra);
+        
+        return cuenta;
+    
+    }
+        
 }

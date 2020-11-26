@@ -114,20 +114,23 @@ public class FacturadeCompra {
         
         
     }
+    
+    // Metodo que calcula el valor total de la factura
 
     
-    public Double valorFactura ( ArrayList<items_MateriaPrimaComprada> compra){
+    public Double valorFactura (ArrayList<MateriaPrima> compra){
         
         double totalvalor = 0.0;
         
-        Iterator iterador = compra.iterator();
-        
-        while(iterador.hasNext()){
+        for (MateriaPrima matprim : compra) {
             
-            items_MateriaPrimaComprada parte = (items_MateriaPrimaComprada) iterador.next();
+            MateriaPrima oo = ( MateriaPrima) matprim;
             
-            parte.
+            totalvalor = totalvalor + matprim.getPrecio();
+            
         }
+        
+        return totalvalor;
         
         
     }

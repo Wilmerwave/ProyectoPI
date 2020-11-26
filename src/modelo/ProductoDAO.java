@@ -1,11 +1,13 @@
 package modelo;
 
+import Servicios.Fachada;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import modelo.Producto;
 
 /**
  *
@@ -31,13 +33,13 @@ public class ProductoDAO {
         int rs = 0;
         
         try{
-            /*con = Fachada.getConnection();
+            con = Fachada.getConnection();
             String sql = "INSERT INTO producto values (?,?,?,?)";
             pstm = con.prepareStatement(sql);
-            pstm.setString(1, Producto);
-            pstm.setString(2, Producto);
-            pstm.setString(3,Producto);
-            pstm.setInt(4,Producto); */
+            pstm.setString(1, producto.getId());
+            pstm.setString(2, producto.getNombre());
+            pstm.setInt(3,producto.getCantidadX6());
+            pstm.setInt(4,producto.getCantidadX12()); 
             rs = pstm.executeUpdate();  
             
         }
@@ -72,16 +74,17 @@ public class ProductoDAO {
         pstm = null;
         int rs = 0;
         
-        try{/*
+        try{
             con = Fachada.getConnection();
             String sql = "UPDATE producto " +
-                         "SET nombre = ?, nivel = ?, num_creditos = ? "
-                    +    "WHERE codigo=?";
+                         "SET nombre = ?, cantidad_x_6 = ?, cantidad_x_12 = ? "
+                    +    "WHERE id_producto=?";
+            
             pstm = con.prepareStatement(sql);            
-            pstm.setString(1, producto);
-            pstm.setString(2, producto);
-            pstm.setInt(3, producto);
-            pstm.setString(4, producto); */
+            pstm.setString(1, producto.getNombre());
+            pstm.setInt(2,producto.getCantidadX6());
+            pstm.setInt(3,producto.getCantidadX12());
+             pstm.setString(4, producto.getId());
             rs = pstm.executeUpdate();  
         }
         catch(SQLException ex){
@@ -116,11 +119,11 @@ public class ProductoDAO {
         PreparedStatement pstm = null;
         int rs = 0;
         
-        try{/*
+        try{
             con = Fachada.getConnection();
-            String sql = "DELETE FROM producto WHERE codigo = ? ";
+            String sql = "DELETE FROM producto WHERE id_producto = ? ";
             pstm = con.prepareStatement(sql);
-            pstm.setString(1, idProducto); */
+            pstm.setString(1, idProducto); 
             rs = pstm.executeUpdate(); 
             return rs;
         }
@@ -158,18 +161,18 @@ public class ProductoDAO {
         
         try{
             
-            //con = Fachada.getConnection();
+            con = Fachada.getConnection();
             
             String sql=" ";
-            sql = "SELECT * FROM programa ORDER BY ID";            
+            sql = "SELECT * FROM producto ORDER BY id_producto";            
                                    
             pstm = con.prepareStatement(sql);
             rs = pstm.executeQuery();
 
             while(rs.next()){
                 Producto producto = new Producto();
-                producto.setId(rs.getString("ID"));
-                producto.setNombre(rs.getString("Nombre"));
+                producto.setId(rs.getString("id_producto"));
+                producto.setNombre(rs.getString("nombre"));
                 listado.add(producto);
             }
         }

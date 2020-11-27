@@ -15,7 +15,7 @@ public class Producto {
     //private ArrayList<MateriaPrima> consumo;
     
     //CONSTRUCTOR
-    public Producto(){} //Por defecto
+    //public Producto(){} //Por defecto
     
     public Producto(String id, String nombre, int cantX6, int cantX12){
         this.id = id;
@@ -52,6 +52,14 @@ public class Producto {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public void setCantidadX6(int cantidadX6) {
+        this.cantidadX6 = cantidadX6;
+    }
+
+    public void setCantidadX12(int cantidadX12) {
+        this.cantidadX12 = cantidadX12;
     }
     
     

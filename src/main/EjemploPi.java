@@ -5,7 +5,10 @@
  */
 package main;
 
-//import modelo.Cliente;
+import modelo.Cliente;
+import modelo.ClienteDAO;
+import modelo.FacturaVenta;
+import modelo.FacturaVentaDAO;
 import modelo.Producto;
 import modelo.ProductoDAO;
 import vista.MenuGUI;
@@ -31,15 +34,26 @@ public class EjemploPi {
         dao.agregarProducto(p);
         dao.agregarProducto(p2);
         dao.modificarProducto(new Producto("345","Dedo",1,0));
-        
         System.out.println(dao.listadoProductos().get(0).getId() + " " + dao.listadoProductos().get(0).getNombre());
         System.out.println(dao.listadoProductos().get(1).getId() + " " + dao.listadoProductos().get(1).getNombre());
-        
         dao.eliminarProducto("345");
         dao.eliminarProducto("347");
+        */
         
-        //Cliente cliente = new Cliente("123","camila",5,5,"678");
-        //System.out.println(cliente.getUbicacion());
+        /*
+        FacturaVenta f = new FacturaVenta("16",34000,"78");
+        FacturaVentaDAO dao = new FacturaVentaDAO();
+        dao.agregarFactura(f);
+        dao.modificarFactura(new FacturaVenta("16",20000,"78"));
+        System.out.println(dao.listadoFactura().get(0).getIdFactura() + " " + String.valueOf(dao.listadoFactura().get(0).getValorVenta()));
+        dao.eliminarFactura("16");
+        */
+        
+        /*
+        Cliente cliente = new Cliente("123","camila",5,5,"678");
+        ClienteDAO dao = new ClienteDAO();
+        System.out.println(cliente.getUbicacion());
+        dao.agregarCliente(cliente);
         */
         
     }

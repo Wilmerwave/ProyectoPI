@@ -7,25 +7,24 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import modelo.Producto;
 
 /**
  *
  * @author Camila
  */
-public class ProductoDAO {
+public class FacturaVentaDAO {
     
     //CONSTRUCTOR
-    public ProductoDAO(){}
+    public FacturaVentaDAO(){}
     
     
     /**
      * 
-     * @param producto Objeto de la clase Producto a insertar en la BBDD
+     * @param factura Objeto de la clase FacturaVenta a insertar en la BBDD
      * @return rs resultado de la operación INSERT
      */
     
-    public int agregarProducto(Producto producto){ 
+    public int agregarFactura(FacturaVenta factura){ 
         
         Connection con = null;
         PreparedStatement pstm;
@@ -34,12 +33,11 @@ public class ProductoDAO {
         
         try{
             con = Fachada.getConnection();
-            String sql = "INSERT INTO producto values (?,?,?,?)";
+            String sql = "INSERT INTO factura_venta values (?,?,?)";
             pstm = con.prepareStatement(sql);
-            pstm.setString(1, producto.getId());
-            pstm.setString(2, producto.getNombre());
-            pstm.setInt(3,producto.getCantidadX6());
-            pstm.setInt(4,producto.getCantidadX12()); 
+            pstm.setString(1, factura.getIdFactura());
+            pstm.setDouble(2, factura.getValorVenta());
+            pstm.setString(3, factura.getIdVenta());
             rs = pstm.executeUpdate();  
             
         }
@@ -64,11 +62,11 @@ public class ProductoDAO {
     
     /**
      * 
-     * @param producto Objeto de la clase Producto a modificar en la BBDD
+     * @param factura Objeto de la clase FacturaVenta a modificar en la BBDD
      * @return rs resultado de la operación UPDATE
      */
     
-    public int modificarProducto(Producto producto){    
+    public int modificarFactura(FacturaVenta factura){    
         
         Connection con = null;
         PreparedStatement pstm;
@@ -77,15 +75,14 @@ public class ProductoDAO {
         
         try{
             con = Fachada.getConnection();
-            String sql = "UPDATE producto " +
-                         "SET nombre = ?, cantidad_x_6 = ?, cantidad_x_12 = ? "
-                    +    "WHERE id_producto=?";
+            String sql = "UPDATE factura_venta " +
+                         "SET valor_venta=?, id_Venta=?"
+                    +    "WHERE id=?";
             
             pstm = con.prepareStatement(sql);            
-            pstm.setString(1, producto.getNombre());
-            pstm.setInt(2,producto.getCantidadX6());
-            pstm.setInt(3,producto.getCantidadX12());
-             pstm.setString(4, producto.getId());
+            pstm.setDouble(1, factura.getValorVenta());
+            pstm.setString(2, factura.getIdVenta());
+            pstm.setString(3, factura.getIdFactura());
             rs = pstm.executeUpdate();  
         }
         catch(SQLException ex){
@@ -107,14 +104,14 @@ public class ProductoDAO {
     }
     
     
-            
+    
     /**
      * 
-     * @param idProducto código del producto a borrar
+     * @param idfactura código de la factura a borrar
      * @return rs resultado de la operación DELETE
      */
     
-    public int eliminarProducto(String idProducto){   
+    public int eliminarFactura(String idFactura){   
         
         Connection con = null;
         PreparedStatement pstm = null;
@@ -122,9 +119,9 @@ public class ProductoDAO {
         
         try{
             con = Fachada.getConnection();
-            String sql = "DELETE FROM producto WHERE id_producto = ? ";
+            String sql = "DELETE FROM factura_venta WHERE id=? ";
             pstm = con.prepareStatement(sql);
-            pstm.setString(1, idProducto); 
+            pstm.setString(1, idFactura); 
             rs = pstm.executeUpdate(); 
             return rs;
         }
@@ -148,35 +145,35 @@ public class ProductoDAO {
     }
     
     
+    
     /**
      * 
-     * Se listaran todos los productos
-     * @return ArrayList, lista de objetos Producto
+     * Se listaran todas las factura_venta
+     * @return ArrayList, lista de objetos Factura
      */
-    public ArrayList<Producto> listadoProductos(){
+    public ArrayList<FacturaVenta> listadoFactura(){
         
         Connection con = null;
         PreparedStatement pstm = null;
         ResultSet rs = null;
-        ArrayList<Producto> listado = new ArrayList<>();
+        ArrayList<FacturaVenta> listado = new ArrayList<>();
         
         try{
             
             con = Fachada.getConnection();
             
             String sql=" ";
-            sql = "SELECT * FROM producto ORDER BY id_producto";            
+            sql = "SELECT * FROM factura_venta ORDER BY id";            
                                    
             pstm = con.prepareStatement(sql);
             rs = pstm.executeQuery();
 
             while(rs.next()){
-                Producto producto = new Producto(null,null,0,0);
-                producto.setId(rs.getString("id_producto"));
-                producto.setNombre(rs.getString("nombre"));
-                producto.setCantidadX6(rs.getInt("cantidad_x_6"));
-                producto.setCantidadX12(rs.getInt("cantidad_x_12"));
-                listado.add(producto);
+                FacturaVenta factura = new FacturaVenta(null,0,null);
+                factura.setIdFactura(rs.getString("id"));
+                factura.setValorVenta(rs.getDouble("valor_venta"));
+                factura.setIdVenta(rs.getString("id_venta"));
+                listado.add(factura);
             }
         }
         catch(SQLException ex){
@@ -196,9 +193,6 @@ public class ProductoDAO {
         }
         return listado;
     }
-    
-    
-    
     
 }
     

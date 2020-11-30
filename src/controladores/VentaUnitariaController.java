@@ -9,6 +9,6 @@ package controladores;
  *
  * @author Wil
  */
-public class VentaxProductoController {
+public class VentaUnitariaController {
     
 }

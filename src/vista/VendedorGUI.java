@@ -117,7 +117,7 @@ public class VendedorGUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         setVisible(false);
-        VentaGUI venta = new VentaGUI();
+        VentaUnitariaGUI venta = new VentaUnitariaGUI();
         venta.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 

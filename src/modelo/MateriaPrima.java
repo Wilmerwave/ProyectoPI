@@ -13,17 +13,32 @@ public class MateriaPrima {
     
     private String id;
     private String nombre;
+    private int cantidad;
     private double precio;
 
+    public MateriaPrima() {
+    }
+
+    
     public MateriaPrima(String id, String nombre, double precio) {
         this.id = id;
         this.nombre = nombre;
         this.precio = precio;
+        this.cantidad = cantidad;
     }
     
     public MateriaPrima(String id) {
         nombre = " ";
         precio = 0.0;
+        cantidad = 0;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
     public String getId() {

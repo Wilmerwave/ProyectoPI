@@ -13,7 +13,7 @@ public class Vendedor {
 private String id;
 private String nombre;
 private double salario;
-private String tipo;
+private String ruta;
 
 
 
@@ -28,8 +28,13 @@ cliente (Objeto)
         this.id = id;
         this.nombre = nombre;
         this.salario = salario;
-        this.tipo = tipo;
+        this.ruta = ruta;
     }
+
+    public Vendedor() {
+    }
+
+    
 
     public String getId() {
         return id;
@@ -55,12 +60,12 @@ cliente (Objeto)
         this.salario = salario;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getRuta() {
+        return ruta;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setRuta(String tipo) {
+        this.ruta = ruta;
     }
     
 

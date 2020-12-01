@@ -50,12 +50,14 @@ public class EjemploPi {
         */
         
         /*
-        Cliente cliente = new Cliente("123","camila",5,5,"678");
+        Cliente cliente = new Cliente("132","camila",15,10,"678");
         ClienteDAO dao = new ClienteDAO();
         System.out.println(cliente.getUbicacion());
+        System.out.println(cliente.getUbicacion().x);
+        System.out.println(cliente.getUbicacion().y);
         dao.agregarCliente(cliente);
+        dao.punto(cliente);
         */
-        
     }
     
 }

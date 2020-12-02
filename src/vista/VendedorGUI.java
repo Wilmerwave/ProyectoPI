@@ -32,6 +32,7 @@ public class VendedorGUI extends javax.swing.JFrame {
         btnVerFacturas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnVolver1 = new javax.swing.JButton();
+        btnUbicacion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,6 +70,13 @@ public class VendedorGUI extends javax.swing.JFrame {
             }
         });
 
+        btnUbicacion.setText("Ubicacion");
+        btnUbicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUbicacionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -77,19 +85,20 @@ public class VendedorGUI extends javax.swing.JFrame {
                 .addGap(269, 269, 269)
                 .addComponent(btnVerFacturas)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addComponent(btnInventarioPT)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 364, Short.MAX_VALUE)
-                .addComponent(btnVenderProductos)
-                .addGap(140, 140, 140))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(223, 223, 223)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnVolver1))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnInventarioPT)
+                        .addGap(106, 106, 106)
+                        .addComponent(btnUbicacion))
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                .addComponent(btnVenderProductos)
+                .addGap(140, 140, 140))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,7 +108,8 @@ public class VendedorGUI extends javax.swing.JFrame {
                 .addGap(85, 85, 85)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInventarioPT)
-                    .addComponent(btnVenderProductos))
+                    .addComponent(btnVenderProductos)
+                    .addComponent(btnUbicacion))
                 .addGap(75, 75, 75)
                 .addComponent(btnVerFacturas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
@@ -137,6 +147,12 @@ public class VendedorGUI extends javax.swing.JFrame {
         MenuGUI principal =new MenuGUI();
         principal.setVisible(true);
     }//GEN-LAST:event_btnVolver1ActionPerformed
+
+    private void btnUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbicacionActionPerformed
+        remove(this);
+        Ubicacion ubi = new Ubicacion();
+        ubi.setVisible(true);
+    }//GEN-LAST:event_btnUbicacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,6 +192,7 @@ public class VendedorGUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInventarioPT;
+    private javax.swing.JButton btnUbicacion;
     private javax.swing.JButton btnVenderProductos;
     private javax.swing.JButton btnVerFacturas;
     private javax.swing.JButton btnVolver1;

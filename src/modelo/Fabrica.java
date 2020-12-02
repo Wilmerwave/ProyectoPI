@@ -16,7 +16,7 @@ public class Fabrica {
     // Atributos
     private String turno;
     private ArrayList<Producto> producido ;
-    //private MateriaPrima disponibilidad
+    private MateriaPrima disponibilidad;
     
     //Constructores
 
@@ -26,7 +26,7 @@ public class Fabrica {
     public Fabrica(String turno, ArrayList<Producto> producido) {
         this.turno = turno;
         this.producido = producido;
-        //this.disponibilidad = disponibilidad;
+        this.disponibilidad = disponibilidad;
     }
     
     
@@ -48,6 +48,14 @@ public class Fabrica {
 
     public void setProducido(ArrayList<Producto> producido) {
         this.producido = producido;
+    }
+
+    public MateriaPrima getDisponibilidad() {
+        return disponibilidad;
+    }
+
+    public void setDisponibilidad(MateriaPrima disponibilidad) {
+        this.disponibilidad = disponibilidad;
     }
     
     

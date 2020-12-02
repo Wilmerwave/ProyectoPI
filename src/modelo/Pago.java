@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Pago {
     //Atributos
-    /*
+    
     private ArrayList<Vendedor> vendedor;
     private ArrayList<FacturadeCompra>factura;
     
@@ -22,10 +22,12 @@ public class Pago {
     public Pago() {
     }
 
-    public Pago(ArrayList<Vendedor> vendedor, ArrayList<FacturadeCompra> ) {
+    public Pago(ArrayList<Vendedor> vendedor, ArrayList<FacturadeCompra> factura) {
         this.vendedor = vendedor;
-        this.<error> = <error>;
+        this.factura = factura;
     }
+
+    
     
     //Getters
     public ArrayList<Vendedor> getVendedor() {
@@ -44,6 +46,6 @@ public class Pago {
     public void setFactura(ArrayList<FacturadeCompra> factura) {
         this.factura = factura;
     }
-    */
+    
     
 }

@@ -29,8 +29,8 @@ public class MenuGUI extends javax.swing.JFrame {
 
         btnEmpresa = new javax.swing.JButton();
         btnFabrica = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnContacto = new javax.swing.JButton();
+        btnVendedor = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,19 +51,19 @@ public class MenuGUI extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/contacto.png"))); // NOI18N
-        jButton3.setText("Contacto");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/contacto.png"))); // NOI18N
+        btnContacto.setText("Contacto");
+        btnContacto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnContactoActionPerformed(evt);
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/vendedor.png"))); // NOI18N
-        jButton4.setText("Vendedor");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/vendedor.png"))); // NOI18N
+        btnVendedor.setText("Vendedor");
+        btnVendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnVendedorActionPerformed(evt);
             }
         });
 
@@ -77,12 +77,12 @@ public class MenuGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3)
+                    .addComponent(btnContacto)
                     .addComponent(btnEmpresa))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnFabrica)
-                    .addComponent(jButton4))
+                    .addComponent(btnVendedor))
                 .addGap(52, 52, 52))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -100,8 +100,8 @@ public class MenuGUI extends javax.swing.JFrame {
                     .addComponent(btnFabrica))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(btnContacto)
+                    .addComponent(btnVendedor))
                 .addGap(34, 34, 34))
         );
 
@@ -110,33 +110,33 @@ public class MenuGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpresaActionPerformed
-
+        //remove(this);
         setVisible(false);
         EmpresaGUI empresa = new EmpresaGUI();
         empresa.setVisible(true);
            
     }//GEN-LAST:event_btnEmpresaActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
+    private void btnVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendedorActionPerformed
+        //remove(this);
         setVisible(false);
         VendedorGUI vendedor = new VendedorGUI();
         vendedor.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnVendedorActionPerformed
 
     private void btnFabricaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFabricaActionPerformed
-
+        //remove(this);
         setVisible(false);
         FabricaGUI fabrica = new FabricaGUI();
         fabrica.setVisible(true);
     }//GEN-LAST:event_btnFabricaActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
+    private void btnContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactoActionPerformed
+        //remove(this);
         setVisible(false);
         ChatGUI chat = new ChatGUI();
         chat.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnContactoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -177,10 +177,10 @@ public class MenuGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnContacto;
     private javax.swing.JButton btnEmpresa;
     private javax.swing.JButton btnFabrica;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnVendedor;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

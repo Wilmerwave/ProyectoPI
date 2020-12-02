@@ -28,61 +28,61 @@ public class EmpresaGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jToggleButton1 = new javax.swing.JToggleButton();
-        compraMateriaPrima = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        inventarioMP = new javax.swing.JButton();
-        inventarioPT = new javax.swing.JButton();
+        btnCompraMateriaPrima = new javax.swing.JButton();
+        btnPago = new javax.swing.JButton();
+        btnInventarioMP = new javax.swing.JButton();
+        btnInventarioPT = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        facturasCompras = new javax.swing.JButton();
-        facturasVenta = new javax.swing.JButton();
+        btnFacturasCompra = new javax.swing.JButton();
+        btnFacturasVenta = new javax.swing.JButton();
         btnVolver1 = new javax.swing.JButton();
 
         jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        compraMateriaPrima.setText("Comprar Materia Prima");
-        compraMateriaPrima.addActionListener(new java.awt.event.ActionListener() {
+        btnCompraMateriaPrima.setText("Comprar Materia Prima");
+        btnCompraMateriaPrima.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                compraMateriaPrimaActionPerformed(evt);
+                btnCompraMateriaPrimaActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Info y Pago a Vendedores");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnPago.setText("Info y Pago a Vendedores");
+        btnPago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnPagoActionPerformed(evt);
             }
         });
 
-        inventarioMP.setText("Inventario Materia Prima");
-        inventarioMP.addActionListener(new java.awt.event.ActionListener() {
+        btnInventarioMP.setText("Inventario Materia Prima");
+        btnInventarioMP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inventarioMPActionPerformed(evt);
+                btnInventarioMPActionPerformed(evt);
             }
         });
 
-        inventarioPT.setText("Inventario Productos");
-        inventarioPT.addActionListener(new java.awt.event.ActionListener() {
+        btnInventarioPT.setText("Inventario Productos");
+        btnInventarioPT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inventarioPTActionPerformed(evt);
+                btnInventarioPTActionPerformed(evt);
             }
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Menú Empresa");
 
-        facturasCompras.setText("Facturas de Compras");
-        facturasCompras.addActionListener(new java.awt.event.ActionListener() {
+        btnFacturasCompra.setText("Facturas de Compras");
+        btnFacturasCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                facturasComprasActionPerformed(evt);
+                btnFacturasCompraActionPerformed(evt);
             }
         });
 
-        facturasVenta.setText("Facturas de Venta");
-        facturasVenta.addActionListener(new java.awt.event.ActionListener() {
+        btnFacturasVenta.setText("Facturas de Venta");
+        btnFacturasVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                facturasVentaActionPerformed(evt);
+                btnFacturasVentaActionPerformed(evt);
             }
         });
 
@@ -101,87 +101,95 @@ public class EmpresaGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(253, 253, 253))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(141, 141, 141)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(compraMateriaPrima)
-                    .addComponent(inventarioMP)
-                    .addComponent(facturasCompras))
-                .addGap(87, 87, 87)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(facturasVenta)
-                    .addComponent(jButton2)
-                    .addComponent(inventarioPT))
-                .addContainerGap(125, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnVolver1))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(249, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(341, 341, 341))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnCompraMateriaPrima)
+                            .addComponent(btnInventarioMP)
+                            .addComponent(btnFacturasCompra))
+                        .addGap(87, 87, 87)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnFacturasVenta)
+                            .addComponent(btnPago)
+                            .addComponent(btnInventarioPT))
+                        .addGap(212, 212, 212))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(41, 41, 41)
                 .addComponent(jLabel1)
-                .addGap(52, 52, 52)
+                .addGap(122, 122, 122)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(compraMateriaPrima)
-                    .addComponent(jButton2))
+                    .addComponent(btnCompraMateriaPrima)
+                    .addComponent(btnPago))
                 .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(facturasCompras)
-                    .addComponent(facturasVenta))
+                    .addComponent(btnFacturasCompra)
+                    .addComponent(btnFacturasVenta))
                 .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inventarioMP)
-                    .addComponent(inventarioPT))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
+                    .addComponent(btnInventarioMP)
+                    .addComponent(btnInventarioPT))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
                 .addComponent(btnVolver1))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+    private void btnPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagoActionPerformed
+        //remove(this);
         setVisible(false);
         PagoGUI pagos = new PagoGUI();
         pagos.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnPagoActionPerformed
 
-    private void compraMateriaPrimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_compraMateriaPrimaActionPerformed
+    private void btnCompraMateriaPrimaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraMateriaPrimaActionPerformed
+        //remove(this);
         setVisible(false);
         CompraMateriaGUI compra = new CompraMateriaGUI();
         compra.setVisible(true);
-    }//GEN-LAST:event_compraMateriaPrimaActionPerformed
+    }//GEN-LAST:event_btnCompraMateriaPrimaActionPerformed
 
-    private void facturasComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facturasComprasActionPerformed
+    private void btnFacturasCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturasCompraActionPerformed
+        //remove(this);
         setVisible(false);
         FacturaCompraGUI factura = new FacturaCompraGUI();
         factura.setVisible(true);
-    }//GEN-LAST:event_facturasComprasActionPerformed
+    }//GEN-LAST:event_btnFacturasCompraActionPerformed
 
-    private void facturasVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facturasVentaActionPerformed
+    private void btnFacturasVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturasVentaActionPerformed
+       //remove(this);
        setVisible(false);
        FacturaVentaGUI factura = new FacturaVentaGUI();
        factura.setVisible(true);
-    }//GEN-LAST:event_facturasVentaActionPerformed
+    }//GEN-LAST:event_btnFacturasVentaActionPerformed
 
-    private void inventarioMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventarioMPActionPerformed
+    private void btnInventarioMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioMPActionPerformed
+        //remove(this);
         setVisible(false);
         InventarioMateriaGUI inv = new InventarioMateriaGUI();
         inv.setVisible(true);
-    }//GEN-LAST:event_inventarioMPActionPerformed
+    }//GEN-LAST:event_btnInventarioMPActionPerformed
 
-    private void inventarioPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventarioPTActionPerformed
+    private void btnInventarioPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioPTActionPerformed
+       //remove(this);
        setVisible(false);
        InventarioProductosGUI inv = new InventarioProductosGUI();
        inv.setVisible(true);
-    }//GEN-LAST:event_inventarioPTActionPerformed
+    }//GEN-LAST:event_btnInventarioPTActionPerformed
 
     private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
+        //remove(this);
         setVisible(false);
         MenuGUI principal =new MenuGUI();
         principal.setVisible(true);
@@ -226,13 +234,13 @@ public class EmpresaGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCompraMateriaPrima;
+    private javax.swing.JButton btnFacturasCompra;
+    private javax.swing.JButton btnFacturasVenta;
+    private javax.swing.JButton btnInventarioMP;
+    private javax.swing.JButton btnInventarioPT;
+    private javax.swing.JButton btnPago;
     private javax.swing.JButton btnVolver1;
-    private javax.swing.JButton compraMateriaPrima;
-    private javax.swing.JButton facturasCompras;
-    private javax.swing.JButton facturasVenta;
-    private javax.swing.JButton inventarioMP;
-    private javax.swing.JButton inventarioPT;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables

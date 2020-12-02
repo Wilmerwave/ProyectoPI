@@ -28,9 +28,9 @@ public class FabricaGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        iniciarProduccion = new javax.swing.JButton();
-        inventarioMP = new javax.swing.JButton();
-        inventarioPT = new javax.swing.JButton();
+        btnIniciarProduccion = new javax.swing.JButton();
+        btnInventarioMP = new javax.swing.JButton();
+        btnInventarioPT = new javax.swing.JButton();
         btnVolver1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -38,19 +38,19 @@ public class FabricaGUI extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Menú Fabrica");
 
-        iniciarProduccion.setText("Iniciar Producción");
+        btnIniciarProduccion.setText("Iniciar Producción");
 
-        inventarioMP.setText("Inventario Materia Prima");
-        inventarioMP.addActionListener(new java.awt.event.ActionListener() {
+        btnInventarioMP.setText("Inventario Materia Prima");
+        btnInventarioMP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inventarioMPActionPerformed(evt);
+                btnInventarioMPActionPerformed(evt);
             }
         });
 
-        inventarioPT.setText("Inventario Productos");
-        inventarioPT.addActionListener(new java.awt.event.ActionListener() {
+        btnInventarioPT.setText("Inventario Productos");
+        btnInventarioPT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inventarioPTActionPerformed(evt);
+                btnInventarioPTActionPerformed(evt);
             }
         });
 
@@ -68,53 +68,57 @@ public class FabricaGUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 651, Short.MAX_VALUE)
+                .addComponent(btnVolver1))
             .addGroup(layout.createSequentialGroup()
-                .addGap(208, 208, 208)
+                .addGap(340, 340, 340)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(inventarioMP)
-                    .addComponent(inventarioPT)
+                    .addComponent(btnInventarioMP)
+                    .addComponent(btnInventarioPT)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(iniciarProduccion)
+                            .addComponent(btnIniciarProduccion)
                             .addComponent(jLabel1))))
-                .addContainerGap(233, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnVolver1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(96, 96, 96)
                 .addComponent(jLabel1)
                 .addGap(61, 61, 61)
-                .addComponent(iniciarProduccion)
+                .addComponent(btnIniciarProduccion)
                 .addGap(60, 60, 60)
-                .addComponent(inventarioMP)
+                .addComponent(btnInventarioMP)
                 .addGap(45, 45, 45)
-                .addComponent(inventarioPT)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addComponent(btnInventarioPT)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
                 .addComponent(btnVolver1))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inventarioMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventarioMPActionPerformed
-        setVisible(false);
+    private void btnInventarioMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioMPActionPerformed
+        remove(this);
+        //setVisible(false);
         InventarioMateriaGUI inv = new InventarioMateriaGUI();
         inv.setVisible(true);
-    }//GEN-LAST:event_inventarioMPActionPerformed
+    }//GEN-LAST:event_btnInventarioMPActionPerformed
 
-    private void inventarioPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inventarioPTActionPerformed
-        setVisible(false);
+    private void btnInventarioPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioPTActionPerformed
+        remove(this);
+        //setVisible(false);
         InventarioProductosGUI inv = new InventarioProductosGUI();
         inv.setVisible(true);
-    }//GEN-LAST:event_inventarioPTActionPerformed
+    }//GEN-LAST:event_btnInventarioPTActionPerformed
 
     private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
-        setVisible(false);
+        remove(this);
+        //setVisible(false);
         MenuGUI principal =new MenuGUI();
         principal.setVisible(true);
     }//GEN-LAST:event_btnVolver1ActionPerformed
@@ -156,10 +160,10 @@ public class FabricaGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnIniciarProduccion;
+    private javax.swing.JButton btnInventarioMP;
+    private javax.swing.JButton btnInventarioPT;
     private javax.swing.JButton btnVolver1;
-    private javax.swing.JButton iniciarProduccion;
-    private javax.swing.JButton inventarioMP;
-    private javax.swing.JButton inventarioPT;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

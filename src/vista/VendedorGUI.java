@@ -27,32 +27,32 @@ public class VendedorGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnInventarioPT = new javax.swing.JButton();
+        btnVenderProductos = new javax.swing.JButton();
+        btnVerFacturas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnVolver1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton4.setText("Inventario Productos");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnInventarioPT.setText("Inventario Productos");
+        btnInventarioPT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnInventarioPTActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Vender Productos");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnVenderProductos.setText("Vender Productos");
+        btnVenderProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnVenderProductosActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Ver Facturas");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnVerFacturas.setText("Ver Facturas");
+        btnVerFacturas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnVerFacturasActionPerformed(evt);
             }
         });
 
@@ -75,13 +75,13 @@ public class VendedorGUI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(269, 269, 269)
-                .addComponent(jButton2)
+                .addComponent(btnVerFacturas)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(102, 102, 102)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnInventarioPT)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 364, Short.MAX_VALUE)
+                .addComponent(btnVenderProductos)
                 .addGap(140, 140, 140))
             .addGroup(layout.createSequentialGroup()
                 .addGap(223, 223, 223)
@@ -98,37 +98,42 @@ public class VendedorGUI extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(85, 85, 85)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton1))
+                    .addComponent(btnInventarioPT)
+                    .addComponent(btnVenderProductos))
                 .addGap(75, 75, 75)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addComponent(btnVerFacturas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
                 .addComponent(btnVolver1))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-         setVisible(false);
+    private void btnInventarioPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioPTActionPerformed
+        remove(this);
+        //setVisible(false);
         InventarioProductosGUI inv = new InventarioProductosGUI();
         inv.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnInventarioPTActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        setVisible(false);
+    private void btnVenderProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderProductosActionPerformed
+        remove(this);
+        //setVisible(false);
         VentaUnitariaGUI venta = new VentaUnitariaGUI();
         venta.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnVenderProductosActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        setVisible(false);
+    private void btnVerFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerFacturasActionPerformed
+        remove(this);
+        //setVisible(false);
         FacturaVentaGUI factura = new FacturaVentaGUI();
         factura.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnVerFacturasActionPerformed
 
     private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
-        setVisible(false);
+        remove(this);
+        //setVisible(false);
         MenuGUI principal =new MenuGUI();
         principal.setVisible(true);
     }//GEN-LAST:event_btnVolver1ActionPerformed
@@ -170,10 +175,10 @@ public class VendedorGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnInventarioPT;
+    private javax.swing.JButton btnVenderProductos;
+    private javax.swing.JButton btnVerFacturas;
     private javax.swing.JButton btnVolver1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -12,13 +12,13 @@ package modelo;
 public class InventarioProductoTerminado {
     
     private Fabrica ingresoProductos; // Objeto Fabrica por agregacion
-    private Venta venta; // Objeto Venta por agregacion
+    private VentaUnitaria venta; // Objeto Venta por agregacion
     private int cantidadMediasDocenas; // Presentacion del producto por mediasdocenas
     private int cantidadDocenas; // Presentacion del producto por docenas
     
     //CONSTRUCTORES
 
-    public InventarioProductoTerminado(Fabrica ingresoProductos, Venta venta, int cantidadMediasDocenas, int cantidadDocenas) {
+    public InventarioProductoTerminado(Fabrica ingresoProductos, VentaUnitaria ventaU, int cantidadMediasDocenas, int cantidadDocenas) {
         this.ingresoProductos = ingresoProductos;
         this.venta = venta;
         this.cantidadMediasDocenas = cantidadMediasDocenas;
@@ -40,11 +40,11 @@ public class InventarioProductoTerminado {
         this.ingresoProductos = ingresoProductos;
     }
 
-    public Venta getVenta() {
+    public VentaUnitaria getVenta() {
         return venta;
     }
 
-    public void setVenta(Venta venta) {
+    public void setVenta(VentaUnitaria venta) {
         this.venta = venta;
     }
 

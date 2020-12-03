@@ -13,7 +13,7 @@ public class FacturaVenta {
     
     
     //CONSTRUCTOR
-    //public FacturaVenta(){} //Por defecto
+    public FacturaVenta(){} //Por defecto
     
     public FacturaVenta(String id, double valor, String idVenta){
         this.idFactura = id;

@@ -16,13 +16,15 @@ public class Cliente {
     
     
     //CONSTRUCTOR
-    public Cliente(String id, String nombre, int x, int y, String telefono) {
+    public Cliente(){}
+    
+    public Cliente(String id, String nombre,Point ubicacion, String telefono) {
         this.id = id;
         this.nombre = nombre;
-        this.ubicacion = new Point(x,y);
+        this.ubicacion = ubicacion;
         this.telefono = telefono;
     }
-    
+   
     
     //GETTERS
     public String getId() {

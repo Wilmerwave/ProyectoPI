@@ -194,6 +194,56 @@ public class FacturaVentaDAO {
         return listado;
     }
     
+    
+    
+     /**
+     * 
+     * Se listaran todas las factura_venta que tengan ese id (como el id es unico devolvera una sola factura)
+     * @return ArrayList, lista de objetos Factura
+     */
+    public ArrayList<FacturaVenta> MuestraUnaFactura(String id){
+        
+        Connection con = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        ArrayList<FacturaVenta> listado = new ArrayList<>();
+        
+        try{
+            
+            con = Fachada.getConnection();
+            
+            String sql=" ";
+            sql = "SELECT * FROM factura_venta WHERE id=? ORDER BY id";            
+                                   
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, id);
+            rs = pstm.executeQuery();
+
+            while(rs.next()){
+                FacturaVenta factura = new FacturaVenta();
+                factura.setIdFactura(rs.getString("id"));
+                factura.setValorVenta(rs.getDouble("valor_venta"));
+                factura.setIdVenta(rs.getString("id_venta"));
+                listado.add(factura);
+            }
+        }
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"Código : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+        }
+        
+        finally{
+            try{
+                if(rs!=null) rs.close();
+                if(pstm!=null) pstm.close();                
+            }
+            catch(SQLException ex){
+                JOptionPane.showMessageDialog(null,"Código : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+            }
+        }
+        return listado;
+    }
 }
     
 

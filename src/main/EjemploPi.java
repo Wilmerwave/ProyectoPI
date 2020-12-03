@@ -5,6 +5,7 @@
  */
 package main;
 
+import java.awt.Point;
 import modelo.Cliente;
 import modelo.ClienteDAO;
 import modelo.FacturaVenta;
@@ -41,23 +42,28 @@ public class EjemploPi {
         */
         
         /*
-        FacturaVenta f = new FacturaVenta("16",34000,"78");
+        FacturaVenta f = new FacturaVenta("20",38000,"78");
         FacturaVentaDAO dao = new FacturaVentaDAO();
         dao.agregarFactura(f);
-        dao.modificarFactura(new FacturaVenta("16",20000,"78"));
-        System.out.println(dao.listadoFactura().get(0).getIdFactura() + " " + String.valueOf(dao.listadoFactura().get(0).getValorVenta()));
-        dao.eliminarFactura("16");
+        //dao.modificarFactura(new FacturaVenta("16",20000,"78"));
+        //System.out.println(dao.listadoFactura().get(0).getIdFactura() + " " + String.valueOf(dao.listadoFactura().get(0).getValorVenta()));
+        //dao.eliminarFactura("16");
+        System.out.println(dao.MuestraUnaFactura("20").get(0).getValorVenta());
         */
         
-        /*
-        Cliente cliente = new Cliente("132","camila",15,10,"678");
+        
+        Cliente cliente = new Cliente("149","tress",new Point(23,5),"678");
         ClienteDAO dao = new ClienteDAO();
-        System.out.println(cliente.getUbicacion());
-        System.out.println(cliente.getUbicacion().x);
-        System.out.println(cliente.getUbicacion().y);
-        dao.agregarCliente(cliente);
-        dao.punto(cliente);
-        */
+        //System.out.println(cliente.getUbicacion());
+        //System.out.println(cliente.getUbicacion().x);
+        //System.out.println(cliente.getUbicacion().y);
+        //dao.agregarCliente(cliente);
+        //dao.muestraPunto("12","camila","2344",12,8);
+        //dao.muestraPunto(cliente);
+        Point pun = new Point(dao.muestraPunto(cliente));
+        System.out.println(pun);
+        System.out.println(pun.x + " " + pun.y);
+        //*/
     }
     
 }

@@ -5,16 +5,24 @@
  */
 package vista;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author PuntoPC
  */
 public class MenuFabricaGUI extends javax.swing.JFrame {
 
+    Fondo fondo = new Fondo();
+    
     /**
      * Creates new form Fabrica
      */
     public MenuFabricaGUI() {
+        this.setContentPane(fondo);
         initComponents();
     }
 
@@ -35,7 +43,8 @@ public class MenuFabricaGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Menú Fabrica");
 
         btnIniciarProduccion.setText("Iniciar Producción");
@@ -54,7 +63,7 @@ public class MenuFabricaGUI extends javax.swing.JFrame {
             }
         });
 
-        btnVolver1.setBackground(new java.awt.Color(0, 102, 255));
+        btnVolver1.setBackground(new java.awt.Color(255, 204, 153));
         btnVolver1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnVolver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/volver.PNG"))); // NOI18N
         btnVolver1.setText("Volver Menú Principal");
@@ -103,22 +112,22 @@ public class MenuFabricaGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInventarioMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioMPActionPerformed
-        remove(this);
-        //setVisible(false);
+        //remove(this);
+        setVisible(false);
         InventarioMateriaGUI inv = new InventarioMateriaGUI();
         inv.setVisible(true);
     }//GEN-LAST:event_btnInventarioMPActionPerformed
 
     private void btnInventarioPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioPTActionPerformed
-        remove(this);
-        //setVisible(false);
+        //remove(this);
+        setVisible(false);
         InventarioProductosGUI inv = new InventarioProductosGUI();
         inv.setVisible(true);
     }//GEN-LAST:event_btnInventarioPTActionPerformed
 
     private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
-        remove(this);
-        //setVisible(false);
+        //remove(this);
+        setVisible(false);
         MenuGUI principal =new MenuGUI();
         principal.setVisible(true);
     }//GEN-LAST:event_btnVolver1ActionPerformed
@@ -168,4 +177,20 @@ public class MenuFabricaGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnVolver1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+    class Fondo extends JPanel{
+        
+        private Image imagen;
+        
+        @Override
+        public void paint(Graphics g){
+            imagen = new ImageIcon(getClass().getResource("/iconos/fondo.jpg")).getImage();
+            
+            g.drawImage(imagen,0,0,getWidth(),getHeight(),this);
+            setOpaque(false);
+            
+            super.paint(g);
+        }
+    }
+
 }

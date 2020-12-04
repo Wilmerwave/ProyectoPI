@@ -5,16 +5,23 @@
  */
 package vista;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author PuntoPC
  */
 public class EmpresaGUI extends javax.swing.JFrame {
 
+    Fondo fondo = new Fondo();
     /**
      * Creates new form Principal2
      */
     public EmpresaGUI() {
+        this.setContentPane(fondo);
         initComponents();
     }
 
@@ -38,11 +45,13 @@ public class EmpresaGUI extends javax.swing.JFrame {
         btnVolver1 = new javax.swing.JButton();
         btnProveedores = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        btnPago1 = new javax.swing.JButton();
 
         jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        btnCompraMateriaPrima.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnCompraMateriaPrima.setText("Comprar Materia Prima");
         btnCompraMateriaPrima.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,13 +59,15 @@ public class EmpresaGUI extends javax.swing.JFrame {
             }
         });
 
-        btnPago.setText(" Pago y Registro Vendedores");
+        btnPago.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnPago.setText(" Pago a Vendedores");
         btnPago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPagoActionPerformed(evt);
             }
         });
 
+        btnInventarioMP.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnInventarioMP.setText("Inventario Materia Prima");
         btnInventarioMP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,6 +75,7 @@ public class EmpresaGUI extends javax.swing.JFrame {
             }
         });
 
+        btnInventarioPT.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnInventarioPT.setText("Inventario Productos");
         btnInventarioPT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,9 +83,11 @@ public class EmpresaGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Menú Empresa");
 
+        btnFacturasCompra.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnFacturasCompra.setText("Facturas de Compras");
         btnFacturasCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,6 +95,7 @@ public class EmpresaGUI extends javax.swing.JFrame {
             }
         });
 
+        btnFacturasVenta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnFacturasVenta.setText("Facturas de Venta");
         btnFacturasVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +103,7 @@ public class EmpresaGUI extends javax.swing.JFrame {
             }
         });
 
-        btnVolver1.setBackground(new java.awt.Color(0, 102, 255));
+        btnVolver1.setBackground(new java.awt.Color(255, 204, 153));
         btnVolver1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnVolver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/volver.PNG"))); // NOI18N
         btnVolver1.setText("Volver Menú Principal");
@@ -98,6 +113,7 @@ public class EmpresaGUI extends javax.swing.JFrame {
             }
         });
 
+        btnProveedores.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnProveedores.setText("Registro Proveedores");
         btnProveedores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,7 +121,16 @@ public class EmpresaGUI extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setText("Registro Clientes");
+
+        btnPago1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnPago1.setText("Registro Vendedores");
+        btnPago1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPago1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,32 +140,35 @@ public class EmpresaGUI extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnVolver1))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(249, Short.MAX_VALUE)
+                .addContainerGap(223, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(341, 341, 341))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btnProveedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnInventarioMP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnFacturasCompra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnCompraMateriaPrima, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(87, 87, 87)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnPago)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnInventarioPT, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                                .addComponent(btnFacturasVenta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(198, 198, 198))))
+                        .addGap(65, 65, 65)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnInventarioPT, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                            .addComponent(btnFacturasVenta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnPago, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(198, 198, 198))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnPago1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addGap(322, 322, 322))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(42, 42, 42)
                 .addComponent(jLabel1)
-                .addGap(122, 122, 122)
+                .addGap(63, 63, 63)
+                .addComponent(btnPago1)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCompraMateriaPrima)
                     .addComponent(btnPago))
@@ -220,6 +248,10 @@ public class EmpresaGUI extends javax.swing.JFrame {
         proveedores.setVisible(true);
     }//GEN-LAST:event_btnProveedoresActionPerformed
 
+    private void btnPago1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPago1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPago1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -265,10 +297,27 @@ public class EmpresaGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnInventarioMP;
     private javax.swing.JButton btnInventarioPT;
     private javax.swing.JButton btnPago;
+    private javax.swing.JButton btnPago1;
     private javax.swing.JButton btnProveedores;
     private javax.swing.JButton btnVolver1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
+
+    class Fondo extends JPanel{
+        
+        private Image imagen;
+        
+        @Override
+        public void paint(Graphics g){
+            imagen = new ImageIcon(getClass().getResource("/iconos/fondo.jpg")).getImage();
+            
+            g.drawImage(imagen,0,0,getWidth(),getHeight(),this);
+            setOpaque(false);
+            
+            super.paint(g);
+        }
+    }
+
 }

@@ -10,7 +10,7 @@ import java.text.SimpleDateFormat;
 public class VentaUnitaria {
     private String idVenta;
     private Date fecha;
-    //private SimpleDateFormat fecha;
+    private String hora;
     private String idProducto;
     private String presentacion; //docena o media docena
     private int cantidad;
@@ -18,12 +18,13 @@ public class VentaUnitaria {
     private String idVendedor;
     private String idCliente;
 
-    public VentaUnitaria() {
-    }
+    //CONSTRUCTOR
+    public VentaUnitaria(){} //POR DEFECTO
     
-    public VentaUnitaria(String idVenta, Date fecha, String idProducto, String presentacion, int cantidad, double valor, String idVendedor, String idCliente) {
+    public VentaUnitaria(String idVenta, Date fecha, String hora, String idProducto, String presentacion, int cantidad, double valor, String idVendedor, String idCliente) {
         this.idVenta = idVenta;
         this.fecha = fecha;
+        this.hora = hora;
         this.idProducto = idProducto;
         this.presentacion = presentacion;
         this.cantidad = cantidad;
@@ -31,19 +32,11 @@ public class VentaUnitaria {
         this.idVendedor = idVendedor;
         this.idCliente = idCliente;
     }
+   
     
-    /*
-    public VentaUnitaria(String idVenta, SimpleDateFormat fecha, String idProducto, String presentacion, int cantidad, double valor, String idVendedor, String idCliente) {
-        this.idVenta = idVenta;
-        this.fecha = fecha;
-        this.idProducto = idProducto;
-        this.presentacion = presentacion;
-        this.cantidad = cantidad;
-        this.valor = valor;
-        this.idVendedor = idVendedor;
-        this.idCliente = idCliente;
-    } */
-
+    //GETTERS AND SETTERS
+    
+    //ID VENTA
     public String getIdVenta() {
         return idVenta;
     }
@@ -52,6 +45,8 @@ public class VentaUnitaria {
         this.idVenta = idVenta;
     }
 
+    
+    //FECHA
     public Date getFecha() {
         return fecha;
     }
@@ -60,16 +55,17 @@ public class VentaUnitaria {
         this.fecha = fecha;
     }
 
-    /*
-    public SimpleDateFormat getFecha() {
-        return fecha;
+    //HORA
+    public String getHora() {
+        return hora;
     }
 
-    public void setFecha(SimpleDateFormat fecha) {
-        this.fecha = fecha;
+    public void setHora(String hora) {
+        this.hora = hora;
     }
-    */
 
+
+    //ID PRODUCTO
     public String getIdProducto() {
         return idProducto;
     }
@@ -78,6 +74,8 @@ public class VentaUnitaria {
         this.idProducto = idProducto;
     }
 
+    
+    //PRESENTACION
     public String getPresentacion() {
         return presentacion;
     }
@@ -86,6 +84,8 @@ public class VentaUnitaria {
         this.presentacion = presentacion;
     }
 
+    
+    //CANTIDAD
     public int getCantidad() {
         return cantidad;
     }
@@ -94,6 +94,8 @@ public class VentaUnitaria {
         this.cantidad = cantidad;
     }
 
+    
+    //VALOR
     public double getValor() {
         return valor;
     }
@@ -102,6 +104,8 @@ public class VentaUnitaria {
         this.valor = valor;
     }
 
+    
+    //ID VENDEDOR
     public String getIdVendedor() {
         return idVendedor;
     }
@@ -110,6 +114,8 @@ public class VentaUnitaria {
         this.idVendedor = idVendedor;
     }
 
+    
+    //ID CLIENTE
     public String getIdCliente() {
         return idCliente;
     }

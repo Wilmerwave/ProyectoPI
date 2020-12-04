@@ -5,16 +5,23 @@
  */
 package vista;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author PuntoPC
  */
 public class MenuVendedorGUI extends javax.swing.JFrame {
 
+    Fondo1 fondo = new Fondo1();
     /**
      * Creates new form Vendedor
      */
     public MenuVendedorGUI() {
+        this.setContentPane(fondo);
         initComponents();
     }
 
@@ -57,10 +64,11 @@ public class MenuVendedorGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Menú Vendedores");
 
-        btnVolver1.setBackground(new java.awt.Color(0, 102, 255));
+        btnVolver1.setBackground(new java.awt.Color(255, 204, 153));
         btnVolver1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnVolver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/volver.PNG"))); // NOI18N
         btnVolver1.setText("Volver Menú Principal");
@@ -82,37 +90,37 @@ public class MenuVendedorGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(269, 269, 269)
-                .addComponent(btnVerFacturas)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnVolver1))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnInventarioPT)
-                        .addGap(106, 106, 106)
-                        .addComponent(btnUbicacion))
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
-                .addComponent(btnVenderProductos)
-                .addGap(140, 140, 140))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(309, 309, 309))
+                    .addComponent(btnVolver1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnUbicacion)
+                            .addComponent(btnVerFacturas))
+                        .addGap(357, 357, 357))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnVenderProductos)
+                            .addComponent(btnInventarioPT))
+                        .addGap(344, 344, 344))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(47, 47, 47)
                 .addComponent(jLabel1)
-                .addGap(205, 205, 205)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInventarioPT)
-                    .addComponent(btnVenderProductos)
-                    .addComponent(btnUbicacion))
-                .addGap(75, 75, 75)
+                .addGap(83, 83, 83)
+                .addComponent(btnInventarioPT)
+                .addGap(55, 55, 55)
                 .addComponent(btnVerFacturas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
+                .addComponent(btnUbicacion)
+                .addGap(34, 34, 34)
+                .addComponent(btnVenderProductos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
                 .addComponent(btnVolver1))
         );
 
@@ -122,34 +130,35 @@ public class MenuVendedorGUI extends javax.swing.JFrame {
 
     private void btnInventarioPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioPTActionPerformed
         //remove(this);
-        //setVisible(false);
+        setVisible(false);
         InventarioProductosGUI inv = new InventarioProductosGUI();
         inv.setVisible(true);
     }//GEN-LAST:event_btnInventarioPTActionPerformed
 
     private void btnVenderProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderProductosActionPerformed
         //remove(this);
-        //setVisible(false);
+        setVisible(false);
         VentaUnitariaGUI venta = new VentaUnitariaGUI();
         venta.setVisible(true);
     }//GEN-LAST:event_btnVenderProductosActionPerformed
 
     private void btnVerFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerFacturasActionPerformed
         //remove(this);
-        //setVisible(false);
+        setVisible(false);
         FacturaVentaGUI factura = new FacturaVentaGUI();
         factura.setVisible(true);
     }//GEN-LAST:event_btnVerFacturasActionPerformed
 
     private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
         //remove(this);
-        //setVisible(false);
+        setVisible(false);
         MenuGUI principal =new MenuGUI();
         principal.setVisible(true);
     }//GEN-LAST:event_btnVolver1ActionPerformed
 
     private void btnUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbicacionActionPerformed
         //remove(this);
+        setVisible(true);
         Ubicacion ubi = new Ubicacion();
         ubi.setVisible(true);
     }//GEN-LAST:event_btnUbicacionActionPerformed
@@ -200,4 +209,20 @@ public class MenuVendedorGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnVolver1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+    
+    class Fondo1 extends JPanel{
+        
+        private Image imagen;
+        
+        @Override
+        public void paint(Graphics g){
+            imagen = new ImageIcon(getClass().getResource("/iconos/fondo.jpg")).getImage();
+            
+            g.drawImage(imagen,0,0,getWidth(),getHeight(),this);
+            setOpaque(false);
+            
+            super.paint(g);
+        }
+    }
+
 }

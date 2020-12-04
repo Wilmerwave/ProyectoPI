@@ -9,9 +9,10 @@ public class Producto {
     //ATRIBUTOS
     private String id;
     private String nombre;
-    //private ProductoPresentacion presentacion;
     private int cantidadX6;
     private int cantidadX12;
+    //private double preciox6;
+    //private double preciox12;
     //private ArrayList<MateriaPrima> consumo;
     
     //CONSTRUCTOR

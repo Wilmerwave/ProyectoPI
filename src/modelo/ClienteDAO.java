@@ -113,14 +113,71 @@ public class ClienteDAO {
     
     
     
+     /*
+    /**
+     * 
+     * @param id String con el id del cliente a quien queremos conocer su ubicacion(direccion)
+     * @return punto de la clase Point resultado de la operación SELECT 
+     */
+    
+    public Point muestraPunto(String idCliente){
+        
+        Connection con = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        Point punto = new Point(0,0);
+        
+        try{
+            con = Fachada.getConnection();
+            String sql="";
+            
+            sql = "SELECT puntoX, puntoY FROM cliente WHERE id_cliente=?";      
+                                   
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, idCliente);
+            
+            rs = pstm.executeQuery();
+                        
+            while(rs.next()){
+                //System.out.println(rs.getInt(1));
+                punto.x = rs.getInt(1);
+                punto.y = rs.getInt(2);
+                //return punto;
+            }
+            rs.close();
+        }
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"Código : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+        }
+        finally{
+            try{
+                if(rs!=null) rs.close();
+                if(pstm!=null) pstm.close();                
+            }
+            catch(SQLException ex){
+                JOptionPane.showMessageDialog(null,"Código : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+            }
+        }
+        
+        return punto;
+        
+    } 
+    
+    
+    
+    
+    
+    //RECIBE CLIENTE
     /*
     /**
      * 
      * @param cliente Objeto de la clase Cliente a quien queremos conocer su ubicacion(direccion)
-     * @return punto de la clase POINT resultado de la operación SELECT 
+     * @return punto de la clase Point resultado de la operación SELECT 
      */
-    
-    public Point muestraPunto(Cliente cliente){
+    /*
+    public Point muestraPuntoC(Cliente cliente){
         
         Connection con = null;
         PreparedStatement pstm = null;
@@ -165,7 +222,7 @@ public class ClienteDAO {
         
     } 
        
-        
+    */    
         
     
     

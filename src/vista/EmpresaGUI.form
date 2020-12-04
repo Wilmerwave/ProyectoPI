@@ -42,18 +42,22 @@
                       <EmptySpace min="-2" pref="341" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnCompraMateriaPrima" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnInventarioMP" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnFacturasCompra" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="btnProveedores" max="32767" attributes="0"/>
+                          <Component id="btnInventarioMP" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnFacturasCompra" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnCompraMateriaPrima" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnFacturasVenta" min="-2" max="-2" attributes="0"/>
                           <Component id="btnPago" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnInventarioPT" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnInventarioPT" alignment="0" pref="151" max="32767" attributes="0"/>
+                              <Component id="btnFacturasVenta" alignment="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="212" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -69,7 +73,7 @@
                   <Component id="btnCompraMateriaPrima" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnPago" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnFacturasCompra" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnFacturasVenta" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -79,7 +83,12 @@
                   <Component id="btnInventarioMP" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnInventarioPT" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="156" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btnProveedores" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="76" max="32767" attributes="0"/>
               <Component id="btnVolver1" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -96,7 +105,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnPago">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Info y Pago a Vendedores"/>
+        <Property name="text" type="java.lang.String" value=" Pago y Registro Vendedores"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPagoActionPerformed"/>
@@ -158,6 +167,19 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVolver1ActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnProveedores">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registro Proveedores"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProveedoresActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registro Clientes"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

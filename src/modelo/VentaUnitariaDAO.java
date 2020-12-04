@@ -33,7 +33,7 @@ public class VentaUnitariaDAO {
             String sql = "INSERT INTO venta values (?,?,?,?,?,?,?,?)";
             pstm = con.prepareStatement(sql);
             pstm.setString(1, p.getIdVenta());
-            //pstm.setSimpleDateFormat(2, p.getFecha());
+            pstm.setDate(2, p.getFecha());
             pstm.setString(3, p.getIdProducto());
             pstm.setString(4, p.getPresentacion());
             pstm.setInt(5,p.getCantidad());
@@ -74,7 +74,7 @@ public class VentaUnitariaDAO {
                     +    "WHERE id_venta = ?";
             pstm = con.prepareStatement(sql);            
             
-            //pstm.setSimpleDateFormat(2, p.getFecha());
+            pstm.setDate(2, p.getFecha());
             pstm.setString(3, p.getIdProducto());
             pstm.setString(4, p.getPresentacion());
             pstm.setInt(5,p.getCantidad());

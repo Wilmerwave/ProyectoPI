@@ -1,5 +1,6 @@
 package modelo;
 
+import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 /**
@@ -8,7 +9,8 @@ import java.text.SimpleDateFormat;
  */
 public class VentaUnitaria {
     private String idVenta;
-    private SimpleDateFormat fecha;
+    private Date fecha;
+    //private SimpleDateFormat fecha;
     private String idProducto;
     private String presentacion; //docena o media docena
     private int cantidad;
@@ -18,8 +20,8 @@ public class VentaUnitaria {
 
     public VentaUnitaria() {
     }
-
-    public VentaUnitaria(String idVenta, SimpleDateFormat fecha, String idProducto, String presentacion, int cantidad, double valor, String idVendedor, String idCliente) {
+    
+    public VentaUnitaria(String idVenta, Date fecha, String idProducto, String presentacion, int cantidad, double valor, String idVendedor, String idCliente) {
         this.idVenta = idVenta;
         this.fecha = fecha;
         this.idProducto = idProducto;
@@ -29,6 +31,18 @@ public class VentaUnitaria {
         this.idVendedor = idVendedor;
         this.idCliente = idCliente;
     }
+    
+    /*
+    public VentaUnitaria(String idVenta, SimpleDateFormat fecha, String idProducto, String presentacion, int cantidad, double valor, String idVendedor, String idCliente) {
+        this.idVenta = idVenta;
+        this.fecha = fecha;
+        this.idProducto = idProducto;
+        this.presentacion = presentacion;
+        this.cantidad = cantidad;
+        this.valor = valor;
+        this.idVendedor = idVendedor;
+        this.idCliente = idCliente;
+    } */
 
     public String getIdVenta() {
         return idVenta;
@@ -38,6 +52,15 @@ public class VentaUnitaria {
         this.idVenta = idVenta;
     }
 
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    /*
     public SimpleDateFormat getFecha() {
         return fecha;
     }
@@ -45,6 +68,7 @@ public class VentaUnitaria {
     public void setFecha(SimpleDateFormat fecha) {
         this.fecha = fecha;
     }
+    */
 
     public String getIdProducto() {
         return idProducto;

@@ -36,6 +36,8 @@ public class EmpresaGUI extends javax.swing.JFrame {
         btnFacturasCompra = new javax.swing.JButton();
         btnFacturasVenta = new javax.swing.JButton();
         btnVolver1 = new javax.swing.JButton();
+        btnProveedores = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -48,7 +50,7 @@ public class EmpresaGUI extends javax.swing.JFrame {
             }
         });
 
-        btnPago.setText("Info y Pago a Vendedores");
+        btnPago.setText(" Pago y Registro Vendedores");
         btnPago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPagoActionPerformed(evt);
@@ -96,6 +98,15 @@ public class EmpresaGUI extends javax.swing.JFrame {
             }
         });
 
+        btnProveedores.setText("Registro Proveedores");
+        btnProveedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProveedoresActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Registro Clientes");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -110,16 +121,19 @@ public class EmpresaGUI extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(341, 341, 341))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCompraMateriaPrima)
-                            .addComponent(btnInventarioMP)
-                            .addComponent(btnFacturasCompra))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnProveedores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnInventarioMP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnFacturasCompra, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCompraMateriaPrima, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(87, 87, 87)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnFacturasVenta)
                             .addComponent(btnPago)
-                            .addComponent(btnInventarioPT))
-                        .addGap(212, 212, 212))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnInventarioPT, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                                .addComponent(btnFacturasVenta, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(198, 198, 198))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,7 +144,7 @@ public class EmpresaGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCompraMateriaPrima)
                     .addComponent(btnPago))
-                .addGap(55, 55, 55)
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnFacturasCompra)
                     .addComponent(btnFacturasVenta))
@@ -138,7 +152,11 @@ public class EmpresaGUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInventarioMP)
                     .addComponent(btnInventarioPT))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnProveedores)
+                    .addComponent(jButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addComponent(btnVolver1))
         );
 
@@ -195,6 +213,13 @@ public class EmpresaGUI extends javax.swing.JFrame {
         principal.setVisible(true);
     }//GEN-LAST:event_btnVolver1ActionPerformed
 
+    private void btnProveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProveedoresActionPerformed
+       //remove(this);
+        setVisible(false);
+        ProveedorCRUD proveedores =new ProveedorCRUD();
+        proveedores.setVisible(true);
+    }//GEN-LAST:event_btnProveedoresActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -240,7 +265,9 @@ public class EmpresaGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnInventarioMP;
     private javax.swing.JButton btnInventarioPT;
     private javax.swing.JButton btnPago;
+    private javax.swing.JButton btnProveedores;
     private javax.swing.JButton btnVolver1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables

@@ -12,6 +12,7 @@ import modelo.FacturaVenta;
 import modelo.FacturaVentaDAO;
 import modelo.Producto;
 import modelo.ProductoDAO;
+import modelo.VentaUnitaria;
 import vista.MenuGUI;
 
 /**
@@ -52,18 +53,23 @@ public class EjemploPi {
         */
         
         
-        Cliente cliente = new Cliente("149","tress",new Point(23,5),"678");
-        ClienteDAO dao = new ClienteDAO();
+        //Cliente cliente = new Cliente("149","trezzz",new Point(40,45),"876");
+        //ClienteDAO dao = new ClienteDAO();
         //System.out.println(cliente.getUbicacion());
         //System.out.println(cliente.getUbicacion().x);
         //System.out.println(cliente.getUbicacion().y);
         //dao.agregarCliente(cliente);
+        //dao.modificarCliente(cliente);
         //dao.muestraPunto("12","camila","2344",12,8);
         //dao.muestraPunto(cliente);
-        Point pun = new Point(dao.muestraPunto(cliente));
-        System.out.println(pun);
-        System.out.println(pun.x + " " + pun.y);
+        //Point pun = new Point(dao.muestraPunto("149"));
+        //Point pun = new Point(dao.muestraPunto(cliente));
+        //System.out.println(pun);
+        //System.out.println(pun.x + " " + pun.y);
         //*/
+        
+        
+        //VentaUnitaria venta = new VentaUnitaria("34",new Date(2020,09,09),"345","docena",12,25000,"V01",);
     }
     
 }

@@ -44,7 +44,7 @@ public class Ubicacion extends javax.swing.JFrame {
         btnVolver1.setBackground(new java.awt.Color(0, 102, 255));
         btnVolver1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnVolver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/volver.PNG"))); // NOI18N
-        btnVolver1.setText("Volver Menú Principal");
+        btnVolver1.setText("Volver");
         btnVolver1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolver1ActionPerformed(evt);
@@ -56,7 +56,7 @@ public class Ubicacion extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 195, Short.MAX_VALUE)
+                .addGap(0, 289, Short.MAX_VALUE)
                 .addComponent(btnVolver1))
         );
         layout.setVerticalGroup(
@@ -70,10 +70,10 @@ public class Ubicacion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
-        remove(this);
-        //setVisible(false);
-        MenuGUI principal =new MenuGUI();
-        principal.setVisible(true);
+        //remove(this);
+        setVisible(false);
+        EmpresaGUI menuEmpresa =new EmpresaGUI();
+        menuEmpresa.setVisible(true);
     }//GEN-LAST:event_btnVolver1ActionPerformed
 
     /**

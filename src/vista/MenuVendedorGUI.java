@@ -16,9 +16,10 @@ import javax.swing.JPanel;
  */
 public class MenuVendedorGUI extends javax.swing.JFrame {
 
-    Fondo1 fondo = new Fondo1();
+    Fondo fondo = new Fondo();
+    
     /**
-     * Creates new form Vendedor
+     * Creates new form MenuVendedorGUI
      */
     public MenuVendedorGUI() {
         this.setContentPane(fondo);
@@ -34,39 +35,30 @@ public class MenuVendedorGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnInventarioPT = new javax.swing.JButton();
-        btnVenderProductos = new javax.swing.JButton();
-        btnVerFacturas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         btnVolver1 = new javax.swing.JButton();
-        btnUbicacion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnInventarioPT.setText("Inventario Productos");
-        btnInventarioPT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInventarioPTActionPerformed(evt);
-            }
-        });
-
-        btnVenderProductos.setText("Vender Productos");
-        btnVenderProductos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVenderProductosActionPerformed(evt);
-            }
-        });
-
-        btnVerFacturas.setText("Ver Facturas");
-        btnVerFacturas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVerFacturasActionPerformed(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Menú Vendedores");
+        jLabel1.setText("Menú Vendedor");
+
+        jButton1.setText("Realizar Venta");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Ver Historial Productos");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         btnVolver1.setBackground(new java.awt.Color(255, 204, 153));
         btnVolver1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -78,76 +70,39 @@ public class MenuVendedorGUI extends javax.swing.JFrame {
             }
         });
 
-        btnUbicacion.setText("Ubicacion");
-        btnUbicacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUbicacionActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(349, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(309, 309, 309))
-                    .addComponent(btnVolver1, javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGap(321, 321, 321))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnUbicacion)
-                            .addComponent(btnVerFacturas))
-                        .addGap(357, 357, 357))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnVenderProductos)
-                            .addComponent(btnInventarioPT))
-                        .addGap(344, 344, 344))))
+                            .addComponent(jButton2)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(352, 352, 352))
+                    .addComponent(btnVolver1, javax.swing.GroupLayout.Alignment.TRAILING)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel1)
-                .addGap(83, 83, 83)
-                .addComponent(btnInventarioPT)
-                .addGap(55, 55, 55)
-                .addComponent(btnVerFacturas)
-                .addGap(42, 42, 42)
-                .addComponent(btnUbicacion)
-                .addGap(34, 34, 34)
-                .addComponent(btnVenderProductos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                .addGap(114, 114, 114)
+                .addComponent(jButton1)
+                .addGap(71, 71, 71)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
                 .addComponent(btnVolver1))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnInventarioPTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioPTActionPerformed
-        //remove(this);
-        setVisible(false);
-        InventarioProductosGUI inv = new InventarioProductosGUI();
-        inv.setVisible(true);
-    }//GEN-LAST:event_btnInventarioPTActionPerformed
-
-    private void btnVenderProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVenderProductosActionPerformed
-        //remove(this);
-        setVisible(false);
-        VentaUnitariaGUI venta = new VentaUnitariaGUI();
-        venta.setVisible(true);
-    }//GEN-LAST:event_btnVenderProductosActionPerformed
-
-    private void btnVerFacturasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerFacturasActionPerformed
-        //remove(this);
-        setVisible(false);
-        FacturaVentaGUI factura = new FacturaVentaGUI();
-        factura.setVisible(true);
-    }//GEN-LAST:event_btnVerFacturasActionPerformed
 
     private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
         //remove(this);
@@ -156,12 +111,17 @@ public class MenuVendedorGUI extends javax.swing.JFrame {
         principal.setVisible(true);
     }//GEN-LAST:event_btnVolver1ActionPerformed
 
-    private void btnUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUbicacionActionPerformed
-        //remove(this);
-        setVisible(true);
-        Ubicacion ubi = new Ubicacion();
-        ubi.setVisible(true);
-    }//GEN-LAST:event_btnUbicacionActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        setVisible(false);
+        VentaUnitariaGUI ventas = new VentaUnitariaGUI();
+        ventas.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        setVisible(false);
+        InventarioProductosGUI inventarioP = new InventarioProductosGUI();
+        inventarioP.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,9 +149,6 @@ public class MenuVendedorGUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MenuVendedorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -202,15 +159,13 @@ public class MenuVendedorGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnInventarioPT;
-    private javax.swing.JButton btnUbicacion;
-    private javax.swing.JButton btnVenderProductos;
-    private javax.swing.JButton btnVerFacturas;
     private javax.swing.JButton btnVolver1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-    
-    class Fondo1 extends JPanel{
+
+class Fondo extends JPanel{
         
         private Image imagen;
         

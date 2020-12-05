@@ -24,15 +24,15 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="btnContacto" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnEmpresa" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="139" max="32767" attributes="0"/>
+              <EmptySpace pref="91" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btnFabrica" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnVendedor" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEmpresa" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnContacto" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="97" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="btnVendedor" max="32767" attributes="0"/>
+                  <Component id="btnFabrica" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
           </Group>
@@ -50,8 +50,8 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="34" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnFabrica" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnEmpresa" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">

@@ -71,8 +71,8 @@ public class ChatGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolver1ActionPerformed
-        remove(this);
-        //setVisible(false);
+        //remove(this);
+        setVisible(false);
         MenuGUI principal =new MenuGUI();
         principal.setVisible(true);
     }//GEN-LAST:event_btnVolver1ActionPerformed

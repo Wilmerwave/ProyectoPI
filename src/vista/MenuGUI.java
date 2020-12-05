@@ -75,14 +75,14 @@ public class MenuGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnContacto)
-                    .addComponent(btnEmpresa))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                .addContainerGap(91, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnFabrica)
-                    .addComponent(btnVendedor))
+                    .addComponent(btnEmpresa)
+                    .addComponent(btnContacto))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnVendedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnFabrica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(52, 52, 52))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -96,8 +96,8 @@ public class MenuGUI extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEmpresa)
-                    .addComponent(btnFabrica))
+                    .addComponent(btnFabrica)
+                    .addComponent(btnEmpresa))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnContacto)
@@ -120,15 +120,15 @@ public class MenuGUI extends javax.swing.JFrame {
     private void btnVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendedorActionPerformed
         //remove(this);
         setVisible(false);
-        VendedorGUI vendedor = new VendedorGUI();
-        vendedor.setVisible(true);
+        MenuVendedorGUI menuVendedor = new MenuVendedorGUI();
+        menuVendedor.setVisible(true);
     }//GEN-LAST:event_btnVendedorActionPerformed
 
     private void btnFabricaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFabricaActionPerformed
         //remove(this);
         setVisible(false);
-        FabricaGUI fabrica = new FabricaGUI();
-        fabrica.setVisible(true);
+        MenuFabricaGUI menuFabrica = new MenuFabricaGUI();
+        menuFabrica.setVisible(true);
     }//GEN-LAST:event_btnFabricaActionPerformed
 
     private void btnContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactoActionPerformed

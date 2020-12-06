@@ -14,22 +14,20 @@ public class MateriaPrima {
     private String id;
     private String nombre;
     private int cantidad;
-    private double precio;
 
     public MateriaPrima() {
     }
 
     
-    public MateriaPrima(String id, String nombre, double precio) {
+    
+    public MateriaPrima(String id, String nombre, int cantidad) {
         this.id = id;
         this.nombre = nombre;
-        this.precio = precio;
         this.cantidad = cantidad;
     }
     
     public MateriaPrima(String id) {
         nombre = " ";
-        precio = 0.0;
         cantidad = 0;
     }
 
@@ -55,14 +53,6 @@ public class MateriaPrima {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
     }
     
     

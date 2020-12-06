@@ -5,9 +5,15 @@
         <group>
             <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/MenuFabricaGUI.java</file>
             <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/modelo/Producto.java</file>
+            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/ProveedorCRUD.java</file>
+            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/CompraMateriaGUI.java</file>
+            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/MenuGUI.java</file>
+            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/Ubicacion.java</file>
+            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/InventarioMateriaGUI.java</file>
             <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/main/EjemploPi.java</file>
             <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/modelo/VentaUnitaria.java</file>
             <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/EmpresaGUI.java</file>
+            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/InventarioProductosGUI.java</file>
             <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/MenuVendedorGUI.java</file>
         </group>
     </open-files>

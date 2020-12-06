@@ -11,14 +11,14 @@ public class Cliente {
     //ATRIBUTOS
     private String id;
     private String nombre;
-    private Point ubicacion;
     private String telefono;
+    private Point ubicacion;
     
     
     //CONSTRUCTOR
     public Cliente(){}
     
-    public Cliente(String id, String nombre,Point ubicacion, String telefono) {
+    public Cliente(String id, String nombre, String telefono, Point ubicacion) {
         this.id = id;
         this.nombre = nombre;
         this.ubicacion = ubicacion;
@@ -35,12 +35,12 @@ public class Cliente {
         return nombre;
     }
 
-    public Point getUbicacion() {
-        return ubicacion;
-    }
-
     public String getTelefono() {
         return telefono;
+    }
+    
+    public Point getUbicacion() {
+        return ubicacion;
     }
     
     
@@ -53,12 +53,12 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public void setUbicacion(Point ubicacion) {
-        this.ubicacion = ubicacion;
-    }
-
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+    
+    public void setUbicacion(Point ubicacion) {
+        this.ubicacion = ubicacion;
     }
     
     

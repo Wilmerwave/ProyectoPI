@@ -19,6 +19,12 @@ public class ClienteDAO {
     public ClienteDAO(){}
     
     
+    //METODOS CRUD
+    
+
+ ////////////////////// INSERT //////////////////////////////////////////////////    
+    
+    
     /**
      * 
      * @param cliente Objeto de la clase Cliente a insertar en la BBDD
@@ -64,8 +70,11 @@ public class ClienteDAO {
         return rs;
     }
     
+  
     
-    /*
+ ////////////////////// UPDATE //////////////////////////////////////////////////    
+    
+
     /**
      * 
      * @param cliente Objeto de la clase Cliente a modificar en la BBDD
@@ -93,6 +102,9 @@ public class ClienteDAO {
             pstm.setInt(4, cliente.getUbicacion().y);
             pstm.setString(5, cliente.getId());
             rs = pstm.executeUpdate();  
+            
+            JOptionPane.showMessageDialog(null, "SE ACTUALIZO EL CLIENTE CON EXITO");
+            
         }
         catch(SQLException ex){
             JOptionPane.showMessageDialog(null,"Código : " + 
@@ -113,10 +125,114 @@ public class ClienteDAO {
     
     
     
-     /*
+ ////////////////////// DELETE //////////////////////////////////////////////////    
+    
+    
     /**
      * 
-     * @param id String con el id del cliente a quien queremos conocer su ubicacion(direccion)
+     * @param idCliente código del cliente a borrar
+     * @return rs resultado de la operación DELETE
+     */
+    
+    public int eliminarCliente(String idCliente){   
+        
+        Connection con = null;
+        PreparedStatement pstm = null;
+        int rs = 0;
+        
+        try{
+            con = Fachada.getConnection();
+            String sql = "DELETE FROM cliente WHERE id_cliente=?";
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, idCliente); 
+            rs = pstm.executeUpdate(); 
+            
+            JOptionPane.showMessageDialog(null, "SE ELIMINO EL CLIENTE CON EXITO");
+            
+        }
+        
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"Código : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+        } 
+        
+        finally{
+            try{
+                if(pstm!=null) pstm.close();                
+            }
+            catch(SQLException ex){
+                JOptionPane.showMessageDialog(null,"Código : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+            }
+        }
+        
+        return rs;
+    }
+    
+    
+    
+ ////////////////////// SELECT //////////////////////////////////////////////////
+    
+    
+    /**
+     * 
+     * Se listaran todos los clientes
+     * @return ArrayList, lista de objetos Cliente
+     */
+    
+    public ArrayList<Cliente> listadoClientes(){
+        
+        Connection con = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        ArrayList<Cliente> listado = new ArrayList<>();
+        
+        try{
+            
+            con = Fachada.getConnection();
+            
+            String sql=" ";
+            sql = "SELECT * FROM cliente ORDER BY id_cliente";            
+                                   
+            pstm = con.prepareStatement(sql);
+            rs = pstm.executeQuery();
+
+            while(rs.next()){
+                Cliente cliente = new Cliente();
+                cliente.setId(rs.getString("id_cliente"));
+                cliente.setNombre(rs.getString("nombre_cliente"));
+                cliente.setTelefono(rs.getString("telefono"));
+                cliente.setUbicacion(new Point(rs.getInt("puntoX") , rs.getInt("PuntoY")));
+                listado.add(cliente);
+            }
+        }
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"Código : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+        }
+        
+        finally{
+            try{
+                if(rs!=null) rs.close();
+                if(pstm!=null) pstm.close();                
+            }
+            catch(SQLException ex){
+                JOptionPane.showMessageDialog(null,"Código : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+            }
+        }
+        return listado;
+    }
+    
+    
+    
+ ////////////////////// MOSTRAR LA UBICACION DEL CLIENTE (RECIBE ID CLIENTE)/////////////////////////////////////
+ 
+    
+     
+    /**
+     * 
+     * @param idCliente String con el id del cliente a quien queremos conocer su ubicacion(direccion)
      * @return punto de la clase Point resultado de la operación SELECT 
      */
     
@@ -139,10 +255,8 @@ public class ClienteDAO {
             rs = pstm.executeQuery();
                         
             while(rs.next()){
-                //System.out.println(rs.getInt(1));
                 punto.x = rs.getInt(1);
                 punto.y = rs.getInt(2);
-                //return punto;
             }
             rs.close();
         }
@@ -167,7 +281,10 @@ public class ClienteDAO {
     
     
     
+ ////////////////////// MUESTRA DIRECCION DE CLIENTE (RECIBE CLIENTE) /////////////////////////////////////////
     
+    
+    ////////////////////////////////////////////////////////////////////////////////////
     
     //RECIBE CLIENTE
     /*

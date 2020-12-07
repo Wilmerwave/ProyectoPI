@@ -18,6 +18,42 @@ public class ClienteDAO {
     //CONSTRUCTOR
     public ClienteDAO(){}
     
+   //METODO LISTAR QUE DESARROLLE, SI QUIERES EJECUTARLO, DEBES QUITAR LAS CLASES 
+    /*
+    public class ClienteDAO {
+        Connection con = Fachada.getConnection();
+        PreparedStatement pstm;   
+        ResultSet rst;
+        int rs = 0;
+    //CONSTRUCTOR
+    public ClienteDAO(){}
+    
+    
+    public ArrayList<Cliente> listarCliente(){
+        ArrayList<Cliente> listac = new ArrayList<>();
+        String sql = "select * from cliente";
+        try{
+            pstm = con.prepareStatement(sql);
+            //con = Fachada.getConnection();
+            rst = pstm.executeQuery();
+            while (rst.next()) {
+             Cliente cliente = new Cliente();
+             cliente.setId(rst.getString("id_cliente"));
+             cliente.setNombre(rst.getString("nombre_cliente"));
+             cliente.setTelefono(rst.getString("telefono"));
+             //cliente.setUbicacion(rst.getX(4));
+             //cliente.setUbicacion(rst.getY(5));
+             
+            listac.add(cliente);
+            }
+        }catch (Exception e){
+            
+        }
+            return listac;
+        
+    }
+    */
+    
     
     //METODOS CRUD
     

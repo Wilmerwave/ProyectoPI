@@ -5,10 +5,12 @@
  */
 package vista;
 
+import controladores.ProductoController;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+import modelo.ProductoDAO;
 
 /**
  *
@@ -47,8 +49,10 @@ public class MenuFabricaGUI extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Menú Fabrica");
 
+        btnIniciarProduccion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnIniciarProduccion.setText("Iniciar Producción");
 
+        btnInventarioMP.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnInventarioMP.setText("Inventario Materia Prima");
         btnInventarioMP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,6 +60,7 @@ public class MenuFabricaGUI extends javax.swing.JFrame {
             }
         });
 
+        btnInventarioPT.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnInventarioPT.setText("Inventario Productos");
         btnInventarioPT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,15 +86,16 @@ public class MenuFabricaGUI extends javax.swing.JFrame {
                 .addGap(0, 651, Short.MAX_VALUE)
                 .addComponent(btnVolver1))
             .addGroup(layout.createSequentialGroup()
-                .addGap(340, 340, 340)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnInventarioMP)
-                    .addComponent(btnInventarioPT)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnIniciarProduccion)
-                            .addComponent(jLabel1))))
+                        .addGap(348, 348, 348)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(340, 340, 340)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnInventarioPT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnInventarioMP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnIniciarProduccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -97,13 +103,13 @@ public class MenuFabricaGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(96, 96, 96)
                 .addComponent(jLabel1)
-                .addGap(61, 61, 61)
+                .addGap(64, 64, 64)
                 .addComponent(btnIniciarProduccion)
-                .addGap(60, 60, 60)
+                .addGap(64, 64, 64)
                 .addComponent(btnInventarioMP)
-                .addGap(45, 45, 45)
+                .addGap(56, 56, 56)
                 .addComponent(btnInventarioPT)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
                 .addComponent(btnVolver1))
         );
 
@@ -122,6 +128,10 @@ public class MenuFabricaGUI extends javax.swing.JFrame {
         //remove(this);
         setVisible(false);
         InventarioProductosGUI inv = new InventarioProductosGUI();
+        ProductoDAO producto = new ProductoDAO();
+        ProductoController controladorProductos = new ProductoController(inv,producto);
+       
+        inv.desactivaBotones();
         inv.setVisible(true);
     }//GEN-LAST:event_btnInventarioPTActionPerformed
 

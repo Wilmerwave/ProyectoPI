@@ -28,8 +28,8 @@ public class EjemploPi {
     
     public static void main(String[] args) {
         
-        //MenuGUI ventana = new MenuGUI();
-        //ventana.setVisible(true);
+        MenuGUI ventana = new MenuGUI();
+        ventana.setVisible(true);
         
         
         //Producto p = new Producto("345","Empanada",10,10,5000,7000);

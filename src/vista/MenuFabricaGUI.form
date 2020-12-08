@@ -28,36 +28,31 @@
               <Component id="btnVolver1" min="-2" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="348" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="340" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnInventarioPT" alignment="1" max="32767" attributes="0"/>
-                          <Component id="btnInventarioMP" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnIniciarProduccion" alignment="0" max="32767" attributes="0"/>
-                      </Group>
+              <EmptySpace min="-2" pref="338" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="btnInventarioPT" alignment="1" max="32767" attributes="0"/>
+                      <Component id="btnInventarioMP" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnIniciarProduccion" alignment="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="331" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
               <Component id="btnIniciarProduccion" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="btnInventarioMP" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Component id="btnInventarioPT" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="150" max="32767" attributes="0"/>
+              <EmptySpace pref="147" max="32767" attributes="0"/>
               <Component id="btnVolver1" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -69,10 +64,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="1"/>
         </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Men&#xfa; Fabrica"/>
+        <Property name="text" type="java.lang.String" value="MEN&#xda; FABRICA"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnIniciarProduccion">
@@ -108,7 +100,7 @@
     <Component class="javax.swing.JButton" name="btnVolver1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="cc" red="ff" type="rgb"/>
+          <Color blue="66" green="ff" red="33" type="rgb"/>
         </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="1"/>

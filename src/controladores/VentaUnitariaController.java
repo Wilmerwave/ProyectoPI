@@ -1,14 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package controladores;
+
+import modelo.ProductoDAO;
+import modelo.VentaUnitariaDAO;
+import vista.VentaGUI;
 
 /**
  *
- * @author Wil
+ * @author Wil 
  */
 public class VentaUnitariaController {
+    
+    private ProductoDAO producto;
+    private VentaUnitariaDAO modelo;
+    private VentaGUI vista;
     
 }

@@ -25,8 +25,6 @@ public class ClienteDAO {
         PreparedStatement pstm;   
         ResultSet rst;
         int rs = 0;
-    //CONSTRUCTOR
-    public ClienteDAO(){}
     
     
     public ArrayList<Cliente> listarCliente(){

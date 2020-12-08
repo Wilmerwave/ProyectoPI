@@ -46,8 +46,7 @@ public class MenuFabricaGUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Menú Fabrica");
+        jLabel1.setText("MENÚ FABRICA");
 
         btnIniciarProduccion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnIniciarProduccion.setText("Iniciar Producción");
@@ -68,7 +67,7 @@ public class MenuFabricaGUI extends javax.swing.JFrame {
             }
         });
 
-        btnVolver1.setBackground(new java.awt.Color(255, 204, 153));
+        btnVolver1.setBackground(new java.awt.Color(51, 255, 102));
         btnVolver1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnVolver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/volver.PNG"))); // NOI18N
         btnVolver1.setText("Volver Menú Principal");
@@ -86,30 +85,27 @@ public class MenuFabricaGUI extends javax.swing.JFrame {
                 .addGap(0, 651, Short.MAX_VALUE)
                 .addComponent(btnVolver1))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(348, 348, 348)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(340, 340, 340)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnInventarioPT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnInventarioMP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnIniciarProduccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(338, 338, 338)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnInventarioPT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnInventarioMP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnIniciarProduccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(331, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(96, 96, 96)
+                .addGap(136, 136, 136)
                 .addComponent(jLabel1)
-                .addGap(64, 64, 64)
+                .addGap(82, 82, 82)
                 .addComponent(btnIniciarProduccion)
-                .addGap(64, 64, 64)
+                .addGap(34, 34, 34)
                 .addComponent(btnInventarioMP)
-                .addGap(56, 56, 56)
+                .addGap(31, 31, 31)
                 .addComponent(btnInventarioPT)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
                 .addComponent(btnVolver1))
         );
 
@@ -194,7 +190,7 @@ public class MenuFabricaGUI extends javax.swing.JFrame {
         
         @Override
         public void paint(Graphics g){
-            imagen = new ImageIcon(getClass().getResource("/iconos/fondo.jpg")).getImage();
+            imagen = new ImageIcon(getClass().getResource("/iconos/Green.png")).getImage();
             
             g.drawImage(imagen,0,0,getWidth(),getHeight(),this);
             setOpaque(false);

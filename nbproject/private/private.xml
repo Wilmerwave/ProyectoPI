@@ -3,18 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/MenuFabricaGUI.java</file>
-            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/modelo/Producto.java</file>
-            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/ProveedorCRUD.java</file>
-            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/CompraMateriaGUI.java</file>
-            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/MenuGUI.java</file>
-            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/Ubicacion.java</file>
-            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/InventarioMateriaGUI.java</file>
+            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/ClienteGUI.java</file>
+            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/modelo/Cliente.java</file>
+            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/controladores/ClienteController.java</file>
+            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/modelo/ClienteDAO.java</file>
             <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/main/EjemploPi.java</file>
-            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/modelo/VentaUnitaria.java</file>
-            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/EmpresaGUI.java</file>
+            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/VentaGUI.java</file>
             <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/InventarioProductosGUI.java</file>
-            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/MenuVendedorGUI.java</file>
+            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/vista/EmpresaGUI.java</file>
+            <file>file:/C:/Users/PuntoPC/Documents/NetBeansProjects/PROYECTO/ProyectoPI/src/controladores/ProductoController.java</file>
         </group>
     </open-files>
 </project-private>

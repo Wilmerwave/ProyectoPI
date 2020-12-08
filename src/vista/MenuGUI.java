@@ -5,16 +5,21 @@
  */
 package vista;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author PuntoPC
  */
 public class MenuGUI extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Principal
-     */
+    Fondo fondo = new Fondo();
+    
     public MenuGUI() {
+        this.setContentPane(fondo);
         initComponents();
     }
 
@@ -35,6 +40,7 @@ public class MenuGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        btnEmpresa.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnEmpresa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/empresa.png"))); // NOI18N
         btnEmpresa.setText("Empresa");
         btnEmpresa.addActionListener(new java.awt.event.ActionListener() {
@@ -43,6 +49,7 @@ public class MenuGUI extends javax.swing.JFrame {
             }
         });
 
+        btnFabrica.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnFabrica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/fabrica.png"))); // NOI18N
         btnFabrica.setText("Fabrica");
         btnFabrica.addActionListener(new java.awt.event.ActionListener() {
@@ -51,6 +58,7 @@ public class MenuGUI extends javax.swing.JFrame {
             }
         });
 
+        btnContacto.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/contacto.png"))); // NOI18N
         btnContacto.setText("Contacto");
         btnContacto.addActionListener(new java.awt.event.ActionListener() {
@@ -59,6 +67,7 @@ public class MenuGUI extends javax.swing.JFrame {
             }
         });
 
+        btnVendedor.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnVendedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/vendedor.png"))); // NOI18N
         btnVendedor.setText("Vendedor");
         btnVendedor.addActionListener(new java.awt.event.ActionListener() {
@@ -67,42 +76,44 @@ public class MenuGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Menú Principal");
+        jLabel1.setBackground(new java.awt.Color(0, 153, 204));
+        jLabel1.setFont(new java.awt.Font("Microsoft Tai Le", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 51, 51));
+        jLabel1.setText("MENÚ PRINCIPAL");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(91, Short.MAX_VALUE)
+                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEmpresa)
                     .addComponent(btnContacto))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnVendedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnFabrica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(52, 52, 52))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnFabrica, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVendedor, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(42, 42, 42))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(339, 339, 339))
+                .addGap(268, 268, 268))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnFabrica)
                     .addComponent(btnEmpresa))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnContacto)
-                    .addComponent(btnVendedor))
-                .addGap(34, 34, 34))
+                .addGap(31, 31, 31)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnVendedor)
+                    .addComponent(btnContacto))
+                .addGap(23, 23, 23))
         );
 
         pack();
@@ -183,4 +194,20 @@ public class MenuGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnVendedor;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+    class Fondo extends JPanel{
+        
+        private Image imagen;
+        
+        @Override
+        public void paint(Graphics g){
+            imagen = new ImageIcon(getClass().getResource("/iconos/fondoMenu.jpg")).getImage();
+            
+            g.drawImage(imagen,0,0,getWidth(),getHeight(),this);
+            setOpaque(false);
+            
+            super.paint(g);
+        }
+    }
+
 }

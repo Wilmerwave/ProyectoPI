@@ -7,6 +7,7 @@ package modelo;
 
 import Servicios.Fachada;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -37,7 +38,6 @@ public class VentaUnitariaDAO {
             pstm.setString(3, p.getIdProducto());
             pstm.setString(4, p.getPresentacion());
             pstm.setInt(5,p.getCantidad());
-            pstm.setDouble(6, p.getValor());
             pstm.setString(7, p.getIdVendedor());
             pstm.setString(8, p.getIdCliente());
             
@@ -78,7 +78,6 @@ public class VentaUnitariaDAO {
             pstm.setString(3, p.getIdProducto());
             pstm.setString(4, p.getPresentacion());
             pstm.setInt(5,p.getCantidad());
-            pstm.setDouble(6, p.getValor());
             pstm.setString(7, p.getIdVendedor());
             pstm.setString(8, p.getIdCliente());
             pstm.setString(1, p.getIdVenta());
@@ -156,13 +155,14 @@ public class VentaUnitariaDAO {
             while(rs.next()){
                 venta = new VentaUnitaria();
                 venta.setIdVenta(rs.getString("id_venta"));
-                //venta.setFecha(rs.SimpleDateFormat("fecha"));
+                venta.setFecha(Date.valueOf(rs.getString("fecha_venta")));
+                venta.setHora(rs.getString("hora_venta"));
                 venta.setIdProducto(rs.getString("id_producto"));
                 venta.setPresentacion(rs.getString("paquete"));
                 venta.setCantidad(rs.getInt("cantidad"));
-                venta.setValor(rs.getDouble("valor_producto"));
                 venta.setIdVendedor(rs.getString("id_vendedor"));
                 venta.setIdCliente(rs.getString("id_cliente"));
+                venta.setTipoVenta(rs.getString("tipo_venta"));
                 listado.add(venta);
             }
         }

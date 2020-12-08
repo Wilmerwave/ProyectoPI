@@ -6,11 +6,13 @@
 package vista;
 
 import controladores.ProductoController;
+import controladores.ClienteController;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import modelo.ProductoDAO;
+import modelo.ClienteDAO;
 
 /**
  *
@@ -46,7 +48,7 @@ public class EmpresaGUI extends javax.swing.JFrame {
         btnFacturasVenta = new javax.swing.JButton();
         btnVolver1 = new javax.swing.JButton();
         btnProveedores = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnClientes = new javax.swing.JButton();
         btnPago1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -87,8 +89,7 @@ public class EmpresaGUI extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Menú Empresa");
+        jLabel1.setText("MENÚ EMPRESA");
 
         btnFacturasCompra.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnFacturasCompra.setText("Facturas de Compras");
@@ -106,7 +107,7 @@ public class EmpresaGUI extends javax.swing.JFrame {
             }
         });
 
-        btnVolver1.setBackground(new java.awt.Color(255, 204, 153));
+        btnVolver1.setBackground(new java.awt.Color(204, 102, 255));
         btnVolver1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnVolver1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/volver.PNG"))); // NOI18N
         btnVolver1.setText("Volver Menú Principal");
@@ -124,8 +125,13 @@ public class EmpresaGUI extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setText("Registro Clientes");
+        btnClientes.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnClientes.setText("Registro Clientes");
+        btnClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClientesActionPerformed(evt);
+            }
+        });
 
         btnPago1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnPago1.setText("Registro Vendedores");
@@ -154,9 +160,6 @@ public class EmpresaGUI extends javax.swing.JFrame {
                 .addContainerGap(242, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(322, 322, 322))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnPago1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnFacturasCompra, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -165,39 +168,42 @@ public class EmpresaGUI extends javax.swing.JFrame {
                             .addComponent(btnProveedores, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnPago, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnFacturasVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnInventarioPT, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(214, 214, 214))))
+                        .addGap(214, 214, 214))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(315, 315, 315))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addContainerGap(96, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(52, 52, 52)
+                .addGap(65, 65, 65)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPago1)
                     .addComponent(jButton2))
-                .addGap(56, 56, 56)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCompraMateriaPrima)
                     .addComponent(btnPago))
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnFacturasCompra)
                     .addComponent(btnFacturasVenta))
-                .addGap(56, 56, 56)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInventarioMP)
                     .addComponent(btnInventarioPT))
-                .addGap(51, 51, 51)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnProveedores)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                    .addComponent(btnClientes))
+                .addGap(68, 68, 68)
                 .addComponent(btnVolver1))
         );
 
@@ -279,6 +285,17 @@ public class EmpresaGUI extends javax.swing.JFrame {
         ubicacion.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
+        //remove(this);
+       setVisible(false);
+       
+       ClienteCRUD vista = new ClienteCRUD();
+       ClienteDAO modelo = new ClienteDAO();
+       ClienteController controladorClientes = new ClienteController(vista , modelo);
+       
+       vista.setVisible(true);
+    }//GEN-LAST:event_btnClientesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -318,6 +335,7 @@ public class EmpresaGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClientes;
     private javax.swing.JButton btnCompraMateriaPrima;
     private javax.swing.JButton btnFacturasCompra;
     private javax.swing.JButton btnFacturasVenta;
@@ -327,7 +345,6 @@ public class EmpresaGUI extends javax.swing.JFrame {
     private javax.swing.JButton btnPago1;
     private javax.swing.JButton btnProveedores;
     private javax.swing.JButton btnVolver1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JToggleButton jToggleButton1;
@@ -339,7 +356,7 @@ public class EmpresaGUI extends javax.swing.JFrame {
         
         @Override
         public void paint(Graphics g){
-            imagen = new ImageIcon(getClass().getResource("/iconos/fondo.jpg")).getImage();
+            imagen = new ImageIcon(getClass().getResource("/iconos/Purple.png")).getImage();
             
             g.drawImage(imagen,0,0,getWidth(),getHeight(),this);
             setOpaque(false);

@@ -14,120 +14,116 @@ public class VentaUnitaria {
     private String idProducto;
     private String presentacion; //docena o media docena
     private int cantidad;
-    private double valor;
     private String idVendedor;
     private String idCliente;
+    private String tipoVenta;
 
     //CONSTRUCTOR
     public VentaUnitaria(){} //POR DEFECTO
     
-    public VentaUnitaria(String idVenta, Date fecha, String hora, String idProducto, String presentacion, int cantidad, double valor, String idVendedor, String idCliente) {
+    public VentaUnitaria(String idVenta, Date fecha, String hora, String idProducto, String presentacion, int cantidad, String idVendedor, String idCliente, String tipoVenta) {
         this.idVenta = idVenta;
         this.fecha = fecha;
         this.hora = hora;
         this.idProducto = idProducto;
         this.presentacion = presentacion;
         this.cantidad = cantidad;
-        this.valor = valor;
         this.idVendedor = idVendedor;
         this.idCliente = idCliente;
+        this.tipoVenta = tipoVenta;
     }
    
     
-    //GETTERS AND SETTERS
-    
-    //ID VENTA
+    //GETTERS 
     public String getIdVenta() {
         return idVenta;
     }
-
-    public void setIdVenta(String idVenta) {
-        this.idVenta = idVenta;
-    }
-
     
-    //FECHA
+    
     public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
 
-    //HORA
     public String getHora() {
         return hora;
     }
 
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
 
-
-    //ID PRODUCTO
     public String getIdProducto() {
         return idProducto;
     }
-
-    public void setIdProducto(String idProducto) {
-        this.idProducto = idProducto;
-    }
-
     
-    //PRESENTACION
+
     public String getPresentacion() {
         return presentacion;
     }
-
-    public void setPresentacion(String presentacion) {
-        this.presentacion = presentacion;
-    }
-
     
-    //CANTIDAD
+    
     public int getCantidad() {
         return cantidad;
     }
+    
+    
+    public String getIdVendedor() {
+        return idVendedor;
+    }
 
+    
+    public String getIdCliente() {
+        return idCliente;
+    }
+
+    public String getTipoVenta() {
+        return tipoVenta;
+    }
+
+    
+
+
+    //SETTERS
+    public void setIdVenta(String idVenta) {
+        this.idVenta = idVenta;
+    }
+    
+    
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+    
+    
+    public void setHora(String hora) {
+        this.hora = hora;
+    }
+    
+    
+    public void setIdProducto(String idProducto) {
+        this.idProducto = idProducto;
+    }
+    
+    
+    public void setPresentacion(String presentacion) {
+        this.presentacion = presentacion;
+    }
+    
+    
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
     
-    //VALOR
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
-    
-    //ID VENDEDOR
-    public String getIdVendedor() {
-        return idVendedor;
-    }
-
     public void setIdVendedor(String idVendedor) {
         this.idVendedor = idVendedor;
     }
-
     
-    //ID CLIENTE
-    public String getIdCliente() {
-        return idCliente;
-    }
-
+    
     public void setIdCliente(String idCliente) {
         this.idCliente = idCliente;
     }
 
-    
-
-
-    
+    public void setTipoVenta(String tipoVenta) {
+        this.tipoVenta = tipoVenta;
+    }
     
     
     

@@ -32,7 +32,7 @@ public class EjemploPi {
         ventana.setVisible(true);
         
         
-        //Producto p = new Producto("345","Empanada",10,10,5000,7000);
+        //Producto p = new Producto("345","Papa",10,10,5000,7000);
         //Producto p2 = new Producto("347","Empanada",3,0,500,100);
         //ProductoDAO dao = new ProductoDAO();
         //dao.agregarProducto(p);
@@ -40,8 +40,14 @@ public class EjemploPi {
         //dao.modificarProducto(new Producto("347","Dedo",1,0,900,900));
         //System.out.println(dao.listadoProductos().get(0).getId() + " " + dao.listadoProductos().get(0).getNombre());
         //System.out.println(dao.listadoProductos().get(1).getId() + " " + dao.listadoProductos().get(1).getNombre());
-        //dao.cantidadDocena(p, 10);
-        //dao.cantidadMediaDocena(p2, 30);
+        //dao.produccionDocena("345", 20);
+        //dao.produccionMediaDocena("345", 40);
+        //System.out.println(dao.precioDocena("Papa", 10));
+        //dao.ventaDocena(p, 10);
+        //System.out.println(dao.muestraCantidadDocena("345"));
+        //System.out.println(dao.muestraCantidadMediaDocena("345"));
+        //dao.ventaDocena("345", 10);
+        //System.out.println(dao.muestraCantidadDocena("345"));
         //dao.eliminarProducto("345");
         //dao.eliminarProducto("347");
         

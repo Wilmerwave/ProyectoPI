@@ -21,7 +21,7 @@ public class ProductoDAO {
     
     //METODOS CRUD
     
-    ////////////////////// INSERT //////////////////////////////////////////////////
+////////////////////// INSERT //////////////////////////////////////////////////
     
     
     /**
@@ -235,6 +235,114 @@ public class ProductoDAO {
     
     
     
+    
+////////////////////// MUESTRA LA CANTIDAD DE DOCENAS DE UN PRODUCTO SEGUN SU ID//////////////////////////
+    
+    
+    
+    
+    /**
+     * 
+     * @param id id del objeto Producto a mostrar la cantidad de docenas 
+     * @return int cantidad de docenas que tiene el producto en la BBDD
+     */
+    
+    public int muestraCantidadDocena(String id){    
+        
+        Connection con = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        int cantidadDocena = 0;
+        
+        try{
+            con = Fachada.getConnection();
+            String sql="";
+            
+            sql = "SELECT cantidad_x_12 FROM producto WHERE id_producto=?";
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, id);
+            rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                cantidadDocena = rs.getInt(1);
+            }
+            
+        }
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"id : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+        }
+        finally{
+            try{
+                if(rs!=null) rs.close();
+                if(pstm!=null) pstm.close();                
+            }
+            catch(SQLException ex){
+                JOptionPane.showMessageDialog(null,"id : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+            }
+        }
+        
+        return cantidadDocena;
+    }    
+    
+    
+    
+    
+////////////////////// MUESTRA LA CANTIDAD DE DOCENAS DE UN PRODUCTO SEGUN SU ID//////////////////////////
+    
+    
+    
+    
+    /**
+     * 
+     * @param id id del objeto Producto a mostrar la cantidad de docenas 
+     * @return int cantidad de docenas que tiene el producto en la BBDD
+     */
+    
+    public int muestraCantidadMediaDocena(String id){    
+        
+        Connection con = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        int cantidadMediaDocena = 0;
+        
+        try{
+            con = Fachada.getConnection();
+            String sql="";
+            
+            sql = "SELECT cantidad_x_6 FROM producto WHERE id_producto=?";
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, id);
+            rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                cantidadMediaDocena = rs.getInt(1);
+            }
+            
+        }
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"id : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+        }
+        finally{
+            try{
+                if(rs!=null) rs.close();
+                if(pstm!=null) pstm.close();                
+            }
+            catch(SQLException ex){
+                JOptionPane.showMessageDialog(null,"id : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+            }
+        }
+        
+        return cantidadMediaDocena;
+    }     
+    
+    
+    
+    
+    
 ////////////////////// PRODUCCION DE DOCENAS //////////////////////////////////////////////////    
     
     
@@ -243,11 +351,11 @@ public class ProductoDAO {
     /**
      * 
      * @param cant cantidad a sumar de docenas
-     * @param p objeto de Producto a modificar en la BBDD
+     * @param id id objeto de Producto a modificar en la BBDD
      * @return rs resultado de la operación UPDATE
      */
     
-    public int cantidadDocena(Producto p, int cant){    
+    public int produccionDocena(String id, int cant){    
         
         Connection con = null;
         PreparedStatement pstm;
@@ -259,11 +367,11 @@ public class ProductoDAO {
             String sql = "UPDATE producto SET cantidad_x_12=? WHERE id_producto=?";
             
             pstm = con.prepareStatement(sql);            
-            pstm.setInt(1, p.getCantidadX12()+cant);
-            pstm.setString(2, p.getId());
+            pstm.setInt(1, muestraCantidadDocena(id) + cant);
+            pstm.setString(2, id);
             rs = pstm.executeUpdate(); 
             
-            JOptionPane.showMessageDialog(null, "SE ACTUALIZO LA CANTIDAD DE DOCENAS DEL PRODUCTO CON EXITO");
+            JOptionPane.showMessageDialog(null, "PRODUCCION EXITOSA...SE ACTUALIZO LA CANTIDAD DE DOCENAS DEL PRODUCTO CON EXITO");
             
         }
         catch(SQLException ex){
@@ -293,11 +401,11 @@ public class ProductoDAO {
     /**
      * 
      * @param cant cantidad a sumar de docenas
-     * @param p objeto de Producto a modificar en la BBDD
+     * @param id id del objeto de Producto a modificar en la BBDD
      * @return rs resultado de la operación UPDATE
      */
     
-    public int cantidadMediaDocena(Producto p, int cant){    
+    public int produccionMediaDocena(String id, int cant){    
         
         Connection con = null;
         PreparedStatement pstm;
@@ -309,11 +417,11 @@ public class ProductoDAO {
             String sql = "UPDATE producto SET cantidad_x_6=? WHERE id_producto=?";
             
             pstm = con.prepareStatement(sql);            
-            pstm.setInt(1, p.getCantidadX6()+cant);
-            pstm.setString(2, p.getId());
+            pstm.setInt(1, muestraCantidadMediaDocena(id) + cant);
+            pstm.setString(2, id);
             rs = pstm.executeUpdate(); 
             
-            JOptionPane.showMessageDialog(null, "SE ACTUALIZO LA CANTIDAD DE MEDIAS DOCENAS DEL PRODUCTO CON EXITO");
+            JOptionPane.showMessageDialog(null, "PRODUCCION EXITOSA...SE ACTUALIZO LA CANTIDAD DE MEDIAS DOCENAS DEL PRODUCTO CON EXITO");
             
         }
         catch(SQLException ex){
@@ -336,7 +444,112 @@ public class ProductoDAO {
     
     
     
+    
+////////////////////// VENTA DE DOCENAS //////////////////////////////////////////////////    
+    
+    
+    
+    
+    /**
+     * 
+     * @param cant cantidad a restar de docenas
+     * @param id id del objeto de Producto a modificar en la BBDD
+     * @return rs resultado de la operación UPDATE
+     */
+    
+    public int ventaDocena(String id, int cant){    
+        
+        Connection con = null;
+        PreparedStatement pstm;
+        pstm = null;
+        int rs = 0;
+        
+        try{
+            con = Fachada.getConnection();
+            String sql = "UPDATE producto SET cantidad_x_12=? WHERE id_producto=?";
+            
+            pstm = con.prepareStatement(sql);            
+            pstm.setInt(1, muestraCantidadDocena(id) - cant);
+            pstm.setString(2, id);
+            rs = pstm.executeUpdate(); 
+            
+            JOptionPane.showMessageDialog(null, "VENTA EXITOSA...SE ACTUALIZO LA CANTIDAD DE DOCENAS DEL PRODUCTO CON EXITO");
+            
+        }
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"Código : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+        }
+        
+        finally{
+            try{
+                if(pstm!=null) pstm.close();                
+            }
+            catch(SQLException ex){
+                JOptionPane.showMessageDialog(null,"Código : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+            }
+        }
+        
+        return rs;
+    }
+    
+    
+    
+////////////////////// VENTA DE MEDIAS DOCENAS //////////////////////////////////////////////////    
+    
+     
+    
+    /**
+     * 
+     * @param cant cantidad a restar de docenas
+     * @param id id del objeto de Producto a modificar en la BBDD
+     * @return rs resultado de la operación UPDATE
+     */
+    
+    public int ventaMediaDocena(String id, int cant){    
+        
+        Connection con = null;
+        PreparedStatement pstm;
+        pstm = null;
+        int rs = 0;
+        
+        try{
+            con = Fachada.getConnection();
+            String sql = "UPDATE producto SET cantidad_x_6=? WHERE id_producto=?";
+            
+            pstm = con.prepareStatement(sql);            
+            pstm.setInt(1, muestraCantidadMediaDocena(id) - cant);
+            pstm.setString(2, id);
+            rs = pstm.executeUpdate(); 
+            
+            JOptionPane.showMessageDialog(null, "VENTA EXITOSA...SE ACTUALIZO LA CANTIDAD DE MEDIAS DOCENAS DEL PRODUCTO CON EXITO");
+            
+        }
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"Código : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+        }
+        
+        finally{
+            try{
+                if(pstm!=null) pstm.close();                
+            }
+            catch(SQLException ex){
+                JOptionPane.showMessageDialog(null,"Código : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+            }
+        }
+        
+        return rs;
+    }    
+
+    
+    
+    
+    
 /////////////METODO PARA LLENAR EL JCOMBOBOX CON LOS NOMBRES DE LOS PRODUCTOS
+    
     public ArrayList<String> consultaProductos(){
         Connection con = null;
         Statement stm = null;
@@ -366,6 +579,7 @@ public class ProductoDAO {
     
     
 ///////////////METODO PARA DEVUELVER EL ID DE UN PRODUCTO DE ACUERDO A SU NOMBRE
+    
     public String muestraID(String nombre){
         Connection con = null;
         PreparedStatement pstm = null;
@@ -403,6 +617,92 @@ public class ProductoDAO {
         
         return id;
     }
+    
+    
+///////////////METODO PARA DEVUELVER EL PRECIO DE UN PRODUCTO DE ACUERDO A SU NOMBRE Y CANTIDAD A VENDER
+///////////////PARA DOCENAS
+    
+    public int precioDocena(String nombre, int cantidad){
+        Connection con = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        int precioTotal = 0;
+        
+        try{
+            con = Fachada.getConnection();
+            String sql="";
+            
+            sql = "SELECT precio_12 FROM producto WHERE nombre=?";
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, nombre);
+            rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                precioTotal = rs.getInt(1) * cantidad;
+            }
+            
+        }
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"id : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+        }
+        finally{
+            try{
+                if(rs!=null) rs.close();
+                if(pstm!=null) pstm.close();                
+            }
+            catch(SQLException ex){
+                JOptionPane.showMessageDialog(null,"id : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+            }
+        }
+        
+        return precioTotal;
+    }
+    
+    
+    
+///////////////METODO PARA DEVUELVER EL PRECIO DE UN PRODUCTO DE ACUERDO A SU NOMBRE Y CANTIDAD A VENDER
+///////////////PARA MEDIAS DOCENAS
+    
+    public int precioMediaDocena(String nombre, int cantidad){
+        Connection con = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        int precioTotal = 0;
+        
+        try{
+            con = Fachada.getConnection();
+            String sql="";
+            
+            sql = "SELECT precio_6 FROM producto WHERE nombre=?";
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, nombre);
+            rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                precioTotal = rs.getInt(1) * cantidad;
+            }
+            
+        }
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"id : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+        }
+        finally{
+            try{
+                if(rs!=null) rs.close();
+                if(pstm!=null) pstm.close();                
+            }
+            catch(SQLException ex){
+                JOptionPane.showMessageDialog(null,"id : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+            }
+        }
+        
+        return precioTotal;
+    }    
+    
     
     
     

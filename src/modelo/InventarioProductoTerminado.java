@@ -5,6 +5,8 @@
  */
 package modelo;
 
+import _probador_fico.Fabrica;
+
 /**
  *
  * @author federicobarbetti

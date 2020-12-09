@@ -18,6 +18,7 @@ import modelo.Producto;
 import modelo.ProductoDAO;
 import modelo.VentaUnitaria;
 import vista.MenuGUI;
+import _probador_fico.Fabrica;
 
 /**
  *
@@ -30,6 +31,9 @@ public class EjemploPi {
         
         MenuGUI ventana = new MenuGUI();
         ventana.setVisible(true);
+        
+        Fabrica nueva = new Fabrica();
+        nueva.iniciarproduccion();
         
         
         //Producto p = new Producto("345","Papa",10,10,5000,7000);

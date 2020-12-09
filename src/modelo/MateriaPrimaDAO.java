@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -163,6 +164,80 @@ public class MateriaPrimaDAO {
         }
         return listado;
     }
+    
+    
+    
+//METODO PARA LLENAR EL JCOMBOBOX
+    public ArrayList<String> consultaMaterial(){
+        Connection con = null;
+        Statement stm = null;
+        ResultSet rs = null;
+        ArrayList<String> materiaPrima = new ArrayList();
+        
+        try{
+            con = Fachada.getConnection();
+            String sql="";
+            
+            sql = "SELECT DISTINCTROW nombre FROM materia_prima";      
+                                   
+            stm = con.createStatement();
+            rs = stm.executeQuery(sql);
+            
+            while(rs.next()){
+                materiaPrima.add(rs.getString(1));
+            }
+        }
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"Código : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+        }
+        return materiaPrima;
+    }
+    
+    
+
+//METODO PARA DEVUELVE EL ID DE UNA MATERIA PRIMA DE ACUERDO A SU NOMBRE
+    public String muestraID(String nombre){
+        Connection con = null;
+        PreparedStatement pstm = null;
+        ResultSet rs = null;
+        String id = "";
+        
+        try{
+            con = Fachada.getConnection();
+            String sql="";
+            
+            sql = "SELECT id_materiaPrima FROM materia_prima WHERE nombre=?";
+            pstm = con.prepareStatement(sql);
+            pstm.setString(1, nombre);
+            rs = pstm.executeQuery();
+            
+            while(rs.next()){
+                id = rs.getString(1);
+            }
+            
+        }
+        catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"id : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+        }
+        finally{
+            try{
+                if(rs!=null) rs.close();
+                if(pstm!=null) pstm.close();                
+            }
+            catch(SQLException ex){
+                JOptionPane.showMessageDialog(null,"id : " + 
+                        ex.getErrorCode() + "\nError :" + ex.getMessage());
+            }
+        }
+        
+        return id;
+    }
+        
+    
+    
+    
 }  
 
 

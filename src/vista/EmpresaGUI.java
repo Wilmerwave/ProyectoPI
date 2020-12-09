@@ -7,12 +7,15 @@ package vista;
 
 import controladores.ProductoController;
 import controladores.ClienteController;
+import controladores.ProveedorController;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import modelo.ProductoDAO;
 import modelo.ClienteDAO;
+import modelo.MateriaPrimaDAO;
+import modelo.ProveedorDAO;
 
 /**
  *
@@ -268,6 +271,10 @@ public class EmpresaGUI extends javax.swing.JFrame {
        //remove(this);
         setVisible(false);
         ProveedorCRUD proveedores =new ProveedorCRUD();
+        ProveedorDAO modelo = new ProveedorDAO();
+        MateriaPrimaDAO material = new MateriaPrimaDAO();
+        ProveedorController controladorProveedor = new ProveedorController(proveedores, modelo, material);
+        
         proveedores.setVisible(true);
     }//GEN-LAST:event_btnProveedoresActionPerformed
 
